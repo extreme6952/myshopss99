@@ -1,0 +1,30 @@
+.carousel {
+    position: relative;
+    max-width: 1080px; /* Set the maximum width of the carousel */
+    margin: auto; /* Center the carousel horizontally */
+}
+
+.carousel-item {
+    position: relative; /* Ensure the item is positioned relative for absolute children */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5%; /* Adjust width as needed */
+    height: 100%;
+    background-color: transparent; /* Make the controls transparent */
+    border: none; /* Remove the border */
+    z-index: 1; /* Ensure controls are above the images */
+}
+
+.carousel-control-prev {
+    left: 10px; /* Adjust as needed */
+}
+
+.carousel-control-next {
+    right: 10px; /* Adjust as needed */
+}
+

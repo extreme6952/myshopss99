@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %} {{product.name}} {% endblock title %}
+
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+<div id="carouselInd" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        {% for image in image %}
+        <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
+            <img src="{{ image.image.url }}" class="d-block w-100" style="max-width: 1080px; margin: auto;">
+        </div>
+        {% endfor %}
+    </div>
+    <a class="carousel-control-prev" href="#carouselInd" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Предыдущий</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselInd" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Следующий</span>
+    </a>
+</div>
+
+<br>
+<br>
+
+
+  <div class="col-10 mx-auto col-md-6 my-3">
+    <div>
+      <h1 class="product_title text-center">{{product.name}}</h1>
+      <h3 class="text-center font-italic mb-4">{{product.price}}$</h3>
+      <br>
+      <br>
+      
+      <p class="text-justify product_text text-center">{{product.description}}</p>
+      
+      
+    
+    </div>
+  </div>
+
+   <form action="{% url "cart:add_product_cart" product.id %}" method="post" >
+
+        {{ cart_add_form }}
+        {% csrf_token %}
+       <input type="submit" value="Добавить товар в корзину">
+        
+   </form>
+
+
+{% endblock content %}
