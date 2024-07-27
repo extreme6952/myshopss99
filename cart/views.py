@@ -1,14 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
-
 from django.views.decorators.http import require_POST
 
-from .forms import ProductCartFormAdd
-
-from .cart import Cart
-
 from sjop.models import Product
-
-from sjop.models import ImageByproduct
+from .cart import Cart
+from .forms import ProductCartFormAdd
 
 
 @require_POST
@@ -32,24 +27,29 @@ def cart_product_add(request, product_id):
     return redirect('cart:cart_detail')
 
 
+@require_POST
+def cart_remove_product(request, product_id):
+    cart = Cart(request)
+
+    product = get_object_or_404(Product,
+                                id=product_id)
+
+    cart.remove(product=product)
+
+    return redirect('cart:cart_detail')
+
+
 def cart_detail(request):
     cart = Cart(request)
 
-    images = {}
-
     for item in cart:
-        product = item['product']
+        item['update_quantity_form'] = ProductCartFormAdd(
+            initial={
+                'quantity': item['quantity'],
+                'override': True
+            }
+        )
 
-        product_images = ImageByproduct.objects.filter(product=product)
-
-        images[product.id] = product_images
-
-    return render(
-        request,
-        'cart/cart_detail.html',
-        {
-            'cart': cart,
-            'images': images
-
-        }
-    )
+    return render(request,
+                  'cart/cart_detail.html',
+                  {'cart': cart})

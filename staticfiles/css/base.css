@@ -28,3 +28,26 @@
     right: 10px; /* Adjust as needed */
 }
 
+.form-group {
+    margin-bottom: 1rem; /* Отступ между элементами формы */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%; /* Ширина полей ввода */
+    padding: 0.375rem 0.75rem; /* Внутренние отступы */
+    border: 1px solid #ced4da; /* Цвет границы */
+    border-radius: 0.25rem; /* Закругленные углы */
+    box-shadow: none; /* Убираем тень */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    border-color: #80bdff; /* Цвет границы при фокусе */
+    outline: 0; /* Убираем стандартное выделение */
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Тень при фокусе */
+}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+
+{% block title %} Создание заказа {% endblock title %}
+
+
+
+{% block content %}
+
+
+<h1>Заказ</h1>
+
+    {% for item in cart %}
+    
+    
+        {{item.quantity}}x {{item.product.name}}
+
+        <span>{{item.total_price}}$</span>
+    
+    {% endfor %}
+
+
+<form action="{% url "order:order_create" %}" method="post" class="container mt-4">
+    <div class="form-group">
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </div>
+</form>
+{% endblock content %}
