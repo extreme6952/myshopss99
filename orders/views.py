@@ -32,6 +32,8 @@ def order_created(request):
 
             cart.clear()
 
+            order_created_celery.delay(order.id)
+
             return render(
                 request,
                 'order/success.html',

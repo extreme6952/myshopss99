@@ -2,6 +2,8 @@ from django.contrib import admin
 
 # Register your models here.
 
+from unfold.admin import ModelAdmin
+
 from .models import *
 
 
@@ -15,7 +17,7 @@ class OrderItemInline(admin.TabularInline):
 
 
 @admin.register(Order)
-class OrderAdmin(admin.ModelAdmin):
+class OrderAdmin(ModelAdmin):
     list_display = ['id', 'user',
                     'address', 'postal_code', 'city', 'paid',
                      'created', 'updated',]
