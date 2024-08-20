@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "unfold.contrib.simple_history",  # optional, if django-simple-history package is used
     'django.contrib.admin',
     'django.contrib.auth',
+    'account.apps.AccountConfig',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -144,8 +145,12 @@ CART_SESSION_ID = 'cart'
 
 LOGIN_URL = 'login'
 
-LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_REDIRECT_URL = 'shop:product'
 
 LOGOUT_URL = 'logout'
 
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.UserAuthenticetionEmail',
+]

@@ -6,6 +6,12 @@ from .models import *
 
 from cart.forms import ProductCartFormAdd
 
+from django.contrib.auth.decorators import login_required
+
+
+
+
+@login_required
 def product_list(request,category_slug=None):
 
 

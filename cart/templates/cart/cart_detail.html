@@ -78,7 +78,11 @@
                             
                             <h3>Общая цена корзины</h3>
                             <div class="summary-item"><span class="text">Total</span><span class="price">{{ cart.get_total_price }}$</span></div>
-                            <button type="button" class="btn btn-primary btn-lg btn-block">Заказать</button>
+                            
+                            <a href="{% url "order:order_create" %}"> 
+                                <button type="button" class="btn btn-primary btn-lg btn-block">Заказать</button> 
+                            </a>
+
                         </div>
                     </div>
                     {% endif %}

@@ -27,17 +27,20 @@ def user_registration(request):
 
             new_user = form.save(commit=False)
 
-            new_user.set_password(new_user.cleaned_data['password'])
+            new_user.set_password(form.cleaned_data['password'])
 
             new_user.save()
 
-            messages.success(request,'Вы успешно прошли регистрацию')
-
-            return render(
-                'registration/login.html',
-                {'new_user':new_user}
+            messages.success(
+                request,
+                'Вы успешно зарегестрировались и теперь можете авторизоваться'
             )
+
+            return redirect('login')
         
+        else:
+
+            messages.error(request,'Произошла какая то ошибка')
 
     else:
 
@@ -45,6 +48,6 @@ def user_registration(request):
 
     return render(
         request,
-        'registrations/register.html',
+        'registration/register.html',
         {'form':form}
     )

@@ -11,6 +11,7 @@ from sjop.models import Product
 
 
 
+
 class Order(models.Model):
 
     user = models.ForeignKey(User,
@@ -63,7 +64,6 @@ class OrderItem(models.Model):
                                 decimal_places=2)
     
     quantity = models.PositiveIntegerField(default=1)
-
 
     def __str__(self):
         

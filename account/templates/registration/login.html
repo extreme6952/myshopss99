@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+
+{% block title %} Login {% endblock title %}
+
+
+
+
+{% block content %}
+
+    {% if form.errors %}
+
+        <p> Ваше имя или пароль не совпали,
+        пожалуйста проверьте правильность введённых данных </p>
+
+    {% else %}
+
+        <p>Авторизуйтесь в личном кабинете</p>
+
+
+{% endif %}
+
+    <form method="post">
+
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" value="login">
+    </form>
+
+   <a href="{% url "register" %}"> <p>Регистрация</p> </a> 
+
+{% endblock content %}
