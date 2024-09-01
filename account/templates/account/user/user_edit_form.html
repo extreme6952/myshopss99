@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+{% block title %} user edit {% endblock title %}
+
+
+
+
+
+{% block content %}
+
+
+    <form action="{% url "profile_edit" %}" method="post">
+
+        {{ user_form.as_p }}
+        {{ profile_form.as_p }}
+        {% csrf_token %}
+        <input type="submit" value="Create">
+    </form>
+
+{% endblock content %}

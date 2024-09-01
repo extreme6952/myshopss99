@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+
+{% block title %}{% endblock title %}
+
+
+
+{% block content %}
+<main class="page">
+    <section class="shopping-cart dark">
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12 col-lg-8">
+                        <div class="items">
+                            {% for item in order.orders.all %}
+                            
+                            <div class="row product">
+                                <div class="col-md-3">
+                                    
+                                    <a href="{{ product.get_absolute_url }}">
+                                        <img class="img-fluid mx-auto d-block image" src="{{ item.product.image.url|slice:1 }}">  
+                                    </a>
+                                    
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="info">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-5 product-name">
+                                                <div class="product-name">
+                                                    <p>{{ item.product.name }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 quantity d-flex align-items-center">
+                                                
+                                            </div>
+                                            <div class="col-md-3 price">
+                                                <span>{{ item.price }}$</span>
+                                            </div>
+                                            <div class="col-md-1 text-right">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <div class="summary">
+
+                            
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<form actions="{% url "payment:process" %}" method="post">
+    <input type="submit" value="оплатить">
+    {% csrf_token %}
+</form>
+    
+
+{% endblock content %}

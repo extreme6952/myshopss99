@@ -41,12 +41,15 @@ def order_create(request):
 
             cart.clear()
 
+            order_created_celery.delay(order.id)
+            
             request.session['order_id'] = order.id
 
             messages.success(request,'Ваш заказ успешно создан и оплачен')
 
-            return redirect('shop:product')
-        
+            return redirect(reverse('payment:process'))
+
+            
     
     else:
 

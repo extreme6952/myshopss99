@@ -1,8 +1,10 @@
 from django import forms 
 
 from django.contrib.auth.models import User
+
 from django.http import Http404
 
+from .models import *
 
 
 class UserRegistrationForm(forms.ModelForm):
@@ -40,3 +42,35 @@ class UserRegistrationForm(forms.ModelForm):
         
         return data
     
+
+
+class UserEdit(forms.ModelForm):
+
+    class Meta:
+
+        model = User
+
+        fields = ['username','first_name','last_name']
+
+
+    def clean_email(self):
+
+        data = self.cleaned_data['email']
+
+        qs = User.objects.exclude(id=self.instance.id).filter(email=data)
+
+        if qs.exists():
+
+            raise forms.ValidationError('Данный email уже используется')
+        
+
+
+class ProfileEdit(forms.ModelForm):
+
+    class Meta:
+
+        model = Profile
+
+        fields = ['image']
+
+

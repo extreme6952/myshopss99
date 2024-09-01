@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 
 from django.conf.global_settings import LOGIN_REDIRECT_URL
+from django.urls import reverse_lazy
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'sjop.apps.SjopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
     'easy_thumbnails',
 ]
 
@@ -154,3 +156,20 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.UserAuthenticetionEmail',
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51PYaFY065gR4p38Hwud6cCmMnL07yTJMxa4rOv7FSkbkv6yh49EbVRcF7z1nWnyX8cCb74TpbJPVdWVl1wUEDdgz009TvfcmY4'
+
+STRIPE_SECRET_KEY = 'sk_test_51PYaFY065gR4p38HVxy2Y4k28xBnGi9G12nUxlCpK0fnLALs9cb5Q29Usyoirs3K20MYM8YCbkcSWrF9nlrIxyoY00gZ2Q3ICP'
+
+STRIPE_API_VERSION = '2024-06-20'
+
+STRIPE_WEBHOOK_SECRET = 'whsec_d2c3d613e246ccc1868acd4f04d25970830fd390bcea475d9cd1fac4dcfd90e0'
+
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user' : lambda u:reverse_lazy('user_detail',
+                                        args=[u.username])
+}

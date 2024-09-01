@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+{% block title %} {{user.username}} {% endblock title %}
+
+
+
+{% block content %}
+
+<div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{user.profiles.image.url}}" class="card-img" alt="Фото профиля">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{user.first_name}} {{user.last_name}}</h5>
+          <p class="card-text">Электронная почта: {{user.email}}</p>
+          <p class="card-text">Телефон: +7 (919) 738-08-29</p>
+          <a href="#" class="btn btn-primary">Редактировать профиль</a>
+        </div>
+      </div>
+    </div>
+
+{% endblock content %}
