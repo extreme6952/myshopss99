@@ -157,7 +157,6 @@ AUTHENTICATION_BACKENDS = [
     'account.authentication.UserAuthenticetionEmail',
 ]
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 STRIPE_PUBLISHABLE_KEY = 'pk_test_51PYaFY065gR4p38Hwud6cCmMnL07yTJMxa4rOv7FSkbkv6yh49EbVRcF7z1nWnyX8cCb74TpbJPVdWVl1wUEDdgz009TvfcmY4'
@@ -173,3 +172,13 @@ ABSOLUTE_URL_OVERRIDES = {
     'auth.user' : lambda u:reverse_lazy('user_detail',
                                         args=[u.username])
 }
+
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_HOST_USER = 'kaznacheev6969@gmail.com'
+
+EMAIL_HOST_PASSWORD = 'ltna lefv dxca pxdy'
+
+EMAIL_PORT = 587
+
+EMAIL_USE_TLS = True

@@ -1,0 +1,68 @@
+@page {
+    size: A4;
+    margin: 2cm;
+  }
+  
+  @media print {
+    body {
+      font-family: Georgia, serif;
+      font-size: 12pt;
+      line-height: 1.5;
+    }
+  
+    h1 {
+      font-size: 20pt;
+      font-weight: bold;
+      margin-top: 20pt;
+    }
+  
+    h2 {
+      font-size: 16pt;
+      font-weight: bold;
+      margin-top: 16pt;
+    }
+  
+    p {
+      margin-top: 10pt;
+      text-align: justify;
+    }
+  
+    ul, ol {
+      margin-top: 10pt;
+      margin-left: 20pt;
+    }
+  
+    table {
+      margin-top: 10pt;
+      border-collapse: collapse;
+    }
+  
+    th, td {
+      border: 1px solid black;
+      padding: 5pt;
+    }
+  
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .status-paid {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+  
+  .status-unpaid {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }

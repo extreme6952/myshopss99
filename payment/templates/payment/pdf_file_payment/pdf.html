@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказ №{{order.id}}</title>
+
+</head>
+<body>
+    <h1>Заказ №_{{order.id}}</h1>
+    
+
+    <h2>Заказ создан {{order.created}}</h2>
+
+    <h2>Список</h2>
+    <ul>
+        <li>{{order.user.first_name}} {{order.user.last_name}}</li>
+        <li>{{order.user.email}}</li>
+        <li>{{order.adress}}</li>
+        <li>{{order.postal_code}} {{order.city}}</li>
+    </ul>
+
+    <h2>Таблица</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Товар</th>
+                <th>Цена</th>
+                <th>Количество</th>
+                <th>Сумма к оплате</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in order.orders.all %}
+            <tr>
+                <td>{{item.product.name}}</td>
+                <td> {{item.price}} </td>
+                <td>{{item.quantity}}</td>
+                <td>{{item.get_cost}}</td>
+                
+            </tr>
+            
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+    <span class="{% if order.paid %} status status-paid {% else %} status status-unpaid {% endif %}">
+        {% if order.paid %} Оплачено {% else %} Требует оплаты!!! {% endif %}
+    <span>
+
+</body>
+</html>

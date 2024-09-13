@@ -1,4 +1,3 @@
-
 import stripe
 
 from django.conf import settings
@@ -8,6 +7,8 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
 from orders.models import Order
+
+from .tasks import payment_send_pdf_file
 
 import stripe.error
 
@@ -60,5 +61,7 @@ def webhook_stripe(request):
             order.paid = True
 
             order.save()
+            
+            payment_send_pdf_file.delay(order.id)
 
     return HttpResponse(status=200)

@@ -12,9 +12,14 @@ from django.contrib import messages
 @login_required
 def dashboard(request):
 
+    profile = Profile.objects.get(user=request.user)
+
     return render(
         request,
-        'account/user/dashboard.html'
+        'account/user/dashboard.html',
+        {
+            'profile':profile
+        }
     )
 
 
@@ -75,50 +80,96 @@ def user_detail(request,username):
 
 
 
+# @login_required
+# def profile_edit(request):
+
+#     if request.method == 'POST':
+
+#         user_form = UserEdit(data=request.PSOT,
+#                         instance=request.user)
+        
+#         profile_form = ProfileEdit(data=request.POST,
+#                                    instance=request.user.profile
+#                                    ,
+#                                    files=request.FILES,)
+        
+
+#         if user_form.is_valid() and profile_form.is_valid():
+
+#             user_form.save()
+
+#             profile_form.save()
+
+#             messages.success(request,'Данные вашего профиля успешно изменены!!!')
+
+#         else:
+
+#             messages.success(
+#                 request,
+#                 'При заполнении данных произошла ошибка'
+#             )
+
+#             return redirect('/')
+
+
+#     else:
+
+#         user_form = UserEdit(instance=request.user,
+#                              )
+        
+#         profile_form = ProfileEdit(instance=request.user.profile)
+        
+#     return render(
+#         request,
+#         'account/user/user_edit_form.html',
+#         {
+#             'profile_form':profile_form,
+#             'user_form':user_form
+#         }
+#     )
+
+
 @login_required
 def profile_edit(request):
 
-    if request.method == 'POST':
+    user_form = UserEdit(
+        instance=request.user,
+        data=request.POST
+    )
 
-        user_form = UserEdit(data=request.PSOT,
-                        instance=request.user)
-        
-        profile_form = ProfileEdit(data=request.POST,
-                                   instance=request.user.profile
-                                   ,
-                                   files=request.FILES,)
-        
-
-        if user_form.is_valid() and profile_form.is_valid():
-
-            user_form.save()
-
-            profile_form.save()
-
-            messages.success(request,'Данные вашего профиля успешно изменены!!!')
-
-        else:
-
-            messages.success(
-                request,
-                'При заполнении данных произошла ошибка'
-            )
-
-            return redirect('/')
+    profile_form = ProfileEdit(
+        data = request.POST,
+        instance = request.user.profiles,
+        files=request.FILES
+    )
 
 
+    if user_form.is_valid() and profile_form.is_valid():
+
+        user_form.save()
+
+        profile_form.save()
+
+        messages.success(
+            request,
+            'Ваши данные успешно были изменены и сохранены'
+        )
+
+
+        return redirect('dashboard')
+    
     else:
 
-        user_form = UserEdit(instance=request.user,
-                             )
-        
-        profile_form = ProfileEdit(instance=request.user.profile)
-        
+        messages.success(
+            request,
+            'При заполнении данных произошла ошибка'
+        )
+
     return render(
         request,
-        'account/user/user_edit_form.html',
+        'account/user/user_edit_profile.html',
         {
             'profile_form':profile_form,
-            'user_form':user_form
+            'user_form':user_form,
         }
     )
