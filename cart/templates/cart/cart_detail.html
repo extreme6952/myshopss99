@@ -46,7 +46,7 @@
                                                 </form>
                                             </div>
                                             <div class="col-md-3 price">
-                                                <span>{{ item.price }}$</span>
+                                                <span>{{ item.price }}₽</span>
                                             </div>
                                             <div class="col-md-1 text-right">
                                                 <form action="{% url 'cart:remove_from_cart' product.id %}" method="post">
@@ -77,7 +77,7 @@
                             {% else %}
                             
                             <h3>Общая цена корзины</h3>
-                            <div class="summary-item"><span class="text">Total</span><span class="price">{{ cart.get_total_price }}$</span></div>
+                            <div class="summary-item"><span class="text">Total</span><span class="price">{{ cart.get_total_price }}₽</span></div>
                             
                             <a href="{% url "order:order_create" %}"> 
                                 <button type="button" class="btn btn-primary btn-lg btn-block">Заказать</button> 

@@ -4,6 +4,10 @@ from django.core.mail import send_mail
 
 from .models import Order
 
+from datetime import timedelta
+
+from django.utils import timezone
+
 
 
 
@@ -24,3 +28,17 @@ def order_created(order_id):
         'kaznacheev1300@mail.ru',
         [order.user.email]
     )
+
+
+@shared_task
+def delete_unpaid_orders():
+
+    time_threshold = timezone.now() - timedelta(minutes=1)
+
+    Order.objects.filter(paid=False, created__lt=time_threshold).delete()
+
+
+
+
+
+

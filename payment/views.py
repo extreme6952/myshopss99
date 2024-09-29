@@ -28,6 +28,7 @@ def payment_process(request):
     order = get_object_or_404(Order,id=order_id)
 
 
+
     if request.method=='POST':
 
         success_url = request.build_absolute_uri(

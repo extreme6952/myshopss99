@@ -60,6 +60,8 @@ def webhook_stripe(request):
             
             order.paid = True
 
+            order.stripe_id = session.payment_intent
+
             order.save()
             
             payment_send_pdf_file.delay(order.id)

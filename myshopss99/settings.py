@@ -14,6 +14,8 @@ from pathlib import Path
 
 from django.conf.global_settings import LOGIN_REDIRECT_URL
 from django.urls import reverse_lazy
+from celery.schedules import crontab
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -182,3 +184,12 @@ EMAIL_HOST_PASSWORD = 'ltna lefv dxca pxdy'
 EMAIL_PORT = 587
 
 EMAIL_USE_TLS = True
+
+
+
+CELERY_BEAT_SCHEDULE = {
+    'delete-unpaid-orders-every-minutes': {
+        'task': 'orders.tasks.delete_unpaid_orders',
+        'schedule': crontab(minute='*/30'),  # Каждые 30 минут
+    },
+}

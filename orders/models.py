@@ -15,7 +15,7 @@ from sjop.models import Product
 class Order(models.Model):
 
     user = models.ForeignKey(User,
-                             on_delete=models.CASCADE,
+                             on_delete=models.PROTECT,
                              related_name='orders')
     
     city = models.CharField(max_length=250)
@@ -29,6 +29,10 @@ class Order(models.Model):
     updated = models.DateTimeField(auto_now_add=True)
 
     paid = models.BooleanField(default=False)
+
+    payment_link = models.URLField(blank=True,null=True)
+
+    stripe_id = models.CharField(max_length=250,blank=True)
 
 
     class Meta:

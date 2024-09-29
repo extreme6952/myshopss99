@@ -19,7 +19,8 @@ class Profile(models.Model):
 
     updated = models.DateTimeField(auto_now=True)
 
-    image = models.ImageField(upload_to='%Y/%m/%d/')
+    image = models.ImageField(upload_to='%Y/%m/%d/',
+                              blank=True)
 
     def __str__(self):
         return f'Profile to {self.user.username}'

@@ -13,7 +13,9 @@
 <div class="card mb-3">
     <div class="row no-gutters">
       <div class="col-md-4">
-        <img src="{{user.profiles.image.url}}" class="card-img" alt="Фото профиля">
+        
+          <img src=" {% if user.profiles.image %} {{user.profiles.image.url}} {% endif %}" class="card-img" alt="Фото профиля">
+        
       </div>
       <div class="col-md-8">
         <div class="card-body">
@@ -26,7 +28,20 @@
                 <button type="button" class="btn btn-primary">Редактировать</button>
             </a>
         
+            {% if unpaid_orders %}
+          
+            <h1>Неоплаченные заказы</h1>
+        
+                {% for order in unpaid_orders %}
+                
+                    <a href="{% url "payment:process" %}">{{order.id}}</a>
 
+        
+        
+                {% endfor %}
+        
+        
+          {% endif %}
         </div>
       </div>
     </div>

@@ -8,17 +8,24 @@ from .models import Profile
 
 from django.contrib import messages
 
+from orders.models import Order
+
 
 @login_required
 def dashboard(request):
 
     profile = Profile.objects.get(user=request.user)
 
+    order = Order.objects.filter(user=request.user)
+
+    unpaid_order = Order.objects.filter(user=request.user,paid=False)
+
     return render(
         request,
         'account/user/dashboard.html',
         {
-            'profile':profile
+            'profile':profile,
+            'unpaid_orders':unpaid_order,
         }
     )
 

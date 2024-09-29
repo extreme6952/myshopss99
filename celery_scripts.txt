@@ -3,3 +3,7 @@ celery -A proj worker -P eventlet -c 1000
 celery -A proj worker -l info
 
 celery -A proj flower
+
+ab -n 1000 -c 1000 -k -r -H "User-agent: Yandex Bot" https://stavmk.ru/
+
+celery -A your_project_name beat -l info
