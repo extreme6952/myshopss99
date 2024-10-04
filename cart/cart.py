@@ -4,6 +4,7 @@ from decimal import Decimal
 
 from django.conf import settings
 
+from coupens.models import Coupone
 
 class Cart:
 
@@ -17,6 +18,9 @@ class Cart:
             cart = self.session[settings.CART_SESSION_ID] = {}
 
         self.cart = cart
+
+        self.coupone_id = request.session.get('coupone_id')
+
 
     def __iter__(self):
 
@@ -80,3 +84,39 @@ class Cart:
     def get_total_price(self):
 
         return sum(item['quantity'] * Decimal(item['price']) for item in self.cart.values())
+    
+
+    @property
+    def coupon(self):
+
+        if self.coupone_id:
+
+            try:
+
+                return Coupone.objects.get(id=self.coupone_id)
+            
+            except Coupone.DoesNotExist:
+
+                pass
+
+        return None
+    
+
+
+    def get_discount(self):
+
+        if self.coupone_id:
+
+            discount_value = (self.coupon.discount / Decimal(100)) * self.get_total_price()
+
+            return discount_value
+
+        
+        return Decimal(0)
+    
+
+    def get_total_price_apply_discount(self):
+
+        return self.get_total_price() - self.get_discount()
+
+        

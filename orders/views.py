@@ -66,7 +66,10 @@ def order_create(request):
     return render(
         request,
         'order/order_create.html',
-        {'form':form}
+        {
+            'cart':cart,
+            'form':form
+        }
     )
             
 

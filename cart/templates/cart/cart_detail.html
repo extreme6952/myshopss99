@@ -9,9 +9,8 @@
                 <h2>Ваша корзина</h2>
                 {% if not cart %}
                 <p>Ваша корзина пуста, перейдите к шоппингу</p>
-
                 {% else %}
-                Товары в вашей корзине
+                <p>Товары в вашей корзине</p>
                 {% endif %}
             </div>
             <div class="content">
@@ -32,9 +31,7 @@
                                     <div class="info">
                                         <div class="row align-items-center">
                                             <div class="col-md-5 product-name">
-                                                <div class="product-name">
-                                                    <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
-                                                </div>
+                                                <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
                                             </div>
                                             <div class="col-md-4 quantity d-flex align-items-center">
                                                 <form action="{% url "cart:add_product_cart" product.id %}" method="post" class="d-flex align-items-center">
@@ -64,28 +61,51 @@
                             {% endfor %}
                         </div>
                     </div>
+
                     <div class="col-md-12 col-lg-4">
                         <div class="summary">
 
                             {% if not cart %}
-                            
                             <center>
                                 <a href="{% url "shop:product" %}"> 
                                     <button type="button" class="btn btn-primary btn-lg btn-block text-center">Перейти к товарам</button>
                                 </a>
                             </center>
+
                             {% else %}
                             
                             <h3>Общая цена корзины</h3>
+
+                            <!-- Display total price -->
                             <div class="summary-item"><span class="text">Total</span><span class="price">{{ cart.get_total_price }}₽</span></div>
-                            
+
+                            <!-- Display coupon details if available -->
+                            {% if cart.coupon %}
+                                <h4>Купон: {{ cart.coupon.code }}</h4>
+                                <div class="summary-item"><span class="text">Скидка ({{ cart.coupon.discount }}%)</span><span class="price">{{ cart.get_discount }}₽</span></div>
+                                <h4>Итоговая цена после скидки:</h4>
+                                <div class="summary-item"><span class="text">Итого</span><span class="price">{{ cart.get_total_price_apply_discount }}₽</span></div>
+                            {% else %}
+                                <!-- If no coupon is applied -->
+                                <p>Купон не применен.</p>
+                            {% endif %}
+
+                            <!-- Order button -->
                             <a href="{% url "order:order_create" %}"> 
                                 <button type="button" class="btn btn-primary btn-lg btn-block">Заказать</button> 
                             </a>
 
                         </div>
                     </div>
+
                     {% endif %}
+
+            <form action="{% url "coupone:coupone_apply" %}" method="post">
+
+                {{ coupone_form.as_p}}
+                <input type="submit" value="Промокод">
+                {% csrf_token %}
+            </form>
                 </div>
             </div>
         </div>

@@ -49,7 +49,7 @@ class Order(models.Model):
     
     def get_total_cost(self):
 
-        return sum(item.get_cost() for item in self.order.all())
+        return sum(item.get_cost() for item in self.orders.all())
     
 
 

@@ -1,31 +1,50 @@
 {% extends "base.html" %}
 
-
-
-{% block title %} Создание заказа {% endblock title %}
-
-
+{% block title %}Создание заказа{% endblock title %}
 
 {% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Создание заказа</h1>
 
+    {% if cart %}
+        <h2>Ваши товары:</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Продукт</th>
+                        <th>Количество</th>
+                        <th>Цена за единицу</th>
+                        <th>Итоговая цена</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart %}
+                        <tr>
+                            <td>{{ item.product.name }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.price }}$</td>
+                            <td>{{ item.total_price }}$</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
 
-<h1>Заказ</h1>
+        <!-- Total Price Calculation -->
+        <div class="alert alert-info">
+            <strong>Итого:</strong> {{ cart.total_price }}$
+        </div>
 
-    {% for item in cart %}
-    
-    
-        {{item.quantity}}x {{item.product.name}}
+    {% else %}
+        <p class="alert alert-warning">Ваша корзина пуста.</p>
+    {% endif %}
 
-        <span>{{item.total_price}}$</span>
-    
-    {% endfor %}
-
-
-<form action="{% url "order:order_create" %}" method="post" class="container mt-4">
-    <div class="form-group">
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Отправить</button>
+    <!-- Order Form -->
+    <form action="{% url 'order:order_create' %}" method="post" class="mt-4">
         {% csrf_token %}
-    </div>
-</form>
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Отправить заказ</button>
+    </form>
+</div>
 {% endblock content %}

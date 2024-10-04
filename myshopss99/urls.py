@@ -9,6 +9,7 @@ urlpatterns = [
     path('cart/',include('cart.urls',namespace='cart')),
     path('orders/',include('orders.urls',namespace='order')),
     path("payment/", include('payment.urls'), name="payment"),
+    path('coupens/',include('coupens.urls',namespace='coupone')),
     path('',include('account.urls')),
     path('',include('sjop.urls',namespace='shop')),
 ]+static(settings.MEDIA_URL, 
