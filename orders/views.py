@@ -14,6 +14,8 @@ from .tasks import order_created as order_created_celery
 
 from django.contrib.auth.decorators import login_required
 
+from django.contrib.admin.views.decorators import staff_member_required
+
 from datetime import datetime
 
 
@@ -34,6 +36,12 @@ def order_create(request):
         if form.is_valid():
 
             order = form.save(commit=False)
+
+            if cart.coupon:
+
+                order.coupon = cart.coupon
+
+                order.discount = cart.coupon.discount
 
             order.user = request.user
 
@@ -74,3 +82,9 @@ def order_create(request):
             
 
 
+@staff_member_required
+def admin_order_detail(request,order_id):
+
+    order = get_object_or_404(Order,id=order_id)
+
+    return render(request,'admin/orders/order/detail.html',{'order':order})

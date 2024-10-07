@@ -6,7 +6,7 @@
 <div class="container mt-5">
     <h1 class="mb-4">Создание заказа</h1>
 
-    {% if cart %}
+    {% if cart.coupon %}
         <h2>Ваши товары:</h2>
         <div class="table-responsive">
             <table class="table table-bordered">
@@ -31,9 +31,9 @@
             </table>
         </div>
 
-        <!-- Total Price Calculation -->
+        <p class="text-blue">Промокод "{{cart.coupon.code}}" даёт {{cart.coupon.discount}}% скидки</p>
         <div class="alert alert-info">
-            <strong>Итого:</strong> {{ cart.total_price }}$
+            <strong>Итого:</strong> {{ cart.get_total_price_apply_discount }}$
         </div>
 
     {% else %}

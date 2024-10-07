@@ -8,11 +8,27 @@ from django.utils import timezone
 
 from sjop.models import Product
 
+from decimal import Decimal
 
+from coupens.models import Coupone
 
+from django.core.validators import MinValueValidator,MaxValueValidator
 
 
 class Order(models.Model):
+
+    coupon = models.ForeignKey(Coupone,
+                               on_delete=models.SET_NULL,
+                               related_name='coupons_in_orders',
+                               blank=True,
+                               null=True)
+    
+    discount = models.IntegerField(validators=[
+        MinValueValidator(0),
+        MaxValueValidator(100)
+    ],
+    default=0)
+    
 
     user = models.ForeignKey(User,
                              on_delete=models.PROTECT,
@@ -44,12 +60,32 @@ class Order(models.Model):
         ]
 
 
+    def get_total_cost_before_discount(self):
+
+        return sum(item.get_cost() for item in self.orders.all())
+
+
+    def get_discount(self):
+
+        total_cost = self.get_total_cost_before_discount()
+
+        if self.discount:
+
+            return total_cost * (self.discount / Decimal(100))
+        
+        return Decimal(0)
+    
+
+    def get_total_cost(self):
+
+        total_cost = self.get_total_cost_before_discount()
+
+        return total_cost - self.get_discount()
+
     def __str__(self):
         return f"Заказ {self.id}"
     
-    def get_total_cost(self):
-
-        return sum(item.get_cost() for item in self.orders.all())
+    
     
 
 
