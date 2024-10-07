@@ -35,8 +35,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'django.contrib.auth',
     'account.apps.AccountConfig',
+    'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'payment.apps.PaymentConfig',
     'coupens.apps.CoupensConfig',
     'easy_thumbnails',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -72,6 +73,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'sjop.context_processor.categories'
             ],
         },
     },

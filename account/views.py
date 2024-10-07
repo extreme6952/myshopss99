@@ -139,38 +139,35 @@ def user_detail(request,username):
 @login_required
 def profile_edit(request):
 
-    user_form = UserEdit(
-        instance=request.user,
-        data=request.POST
-    )
+    if request.method=='POST':
 
-    profile_form = ProfileEdit(
-        data = request.POST,
-        instance = request.user.profiles,
-        files=request.FILES
-    )
+        user_form = UserEditForm(instance=request.user,
+                             data=request.POST)
+        
+        profile_form = ProfileEdit(instance=request.user.profiles,
+                                   data=request.POST,
+                                   files=request.FILES)
+        
+        if user_form.is_valid() and profile_form.is_valid():
 
+            user_form.save()
 
-    if user_form.is_valid() and profile_form.is_valid():
+            profile_form.save()
 
-        user_form.save()
+            messages.success(request,'Ваши данные успешно изменены')
 
-        profile_form.save()
+            return redirect('profile')
 
-        messages.success(
-            request,
-            'Ваши данные успешно были изменены и сохранены'
-        )
+        else:
 
+            messages.error(request,'Упс,произошла какая то ошибка')
 
-        return redirect('dashboard')
-    
     else:
 
-        messages.success(
-            request,
-            'При заполнении данных произошла ошибка'
-        )
+        user_form = UserEditForm(instance=request.user)
+
+        profile_form = ProfileEdit(instance=request.user.profiles,
+                                   files=request.FILES)
 
     return render(
         request,

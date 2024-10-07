@@ -3,52 +3,46 @@
 {% load static %}
 
 {% block title %}
-	Home
+    Главная
 {% endblock %} 
 
 {% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <!-- You can add a hero image or banner here if needed -->
+        </div>
+    </div>
 
+    <div class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-10 mx-auto my-2 text-center">
+                    <h1 class="text-capitalize font-weight-bold">Наши Продукты</h1>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-	<div class="container-fluid">
-		<div class="row">
-			
-		</div>
-	</div>
-
-	<div class="py-4">
-		<div class="container">
-			<div class="row">
-				<div class="col-10 mx-auto my-2 text-center">
-					<h1 class="text-capitalize font-weight-bold">
-						
-					</h1>
-				</div>
-			</div>
-		</div>
-		
-	</div>
-
-	<div class="container">
-		<div class="row">
-			{% for product in product %}
-				<div class="col-9 mx-auto col-md-6 col-lg-3">
-					<div class="card mb-5">
-                        {% for images in product.images.all|slice:1 %}
-						<div class="p-4">
-							<a href="{{product.get_absolute_url}}"><img class="card-img-top" src="{{images.image.url}}" alt=""></a>
-						</div>
+    <div class="container">
+        <div class="row">
+            {% for product in product %}
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card shadow-sm border-light">
+                        {% for image in product.images.all|slice:":1" %}
+                            <a href="{{ product.get_absolute_url }}">
+                                <img class="card-img-top" src="{{ image.image.url }}" alt="{{ product.name }}">
+                            </a>
                         {% endfor %}
-						
-						<div class="card-footer d-flex justify-content-between" style="background: transparent; border-color: transparent;">
-							<p class="font-weight-bold mb-0 text-center">{{product.name}}</p>
-                    		
-						</div>
-					</div>
-				</div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">Цена: {{ product.price }}₽</p>
+                            <a href="{{ product.get_absolute_url }}" class="btn btn-primary">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <p class="text-center">Нет доступных продуктов.</p>
             {% endfor %}
-		</div>
-	</div>
-
-	
+        </div>
+    </div>
 {% endblock %}

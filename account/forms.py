@@ -44,13 +44,13 @@ class UserRegistrationForm(forms.ModelForm):
     
 
 
-class UserEdit(forms.ModelForm):
+class UserEditForm(forms.ModelForm):
 
     class Meta:
 
         model = User
 
-        fields = ['username','first_name','last_name']
+        fields = ['username','first_name','last_name','email']
 
 
     def clean_email(self):
@@ -63,6 +63,14 @@ class UserEdit(forms.ModelForm):
 
             raise forms.ValidationError('Данный email уже используется')
         
+        return data
+        
+
+    def __init__(self, *args, **kwargs):
+        super(UserEditForm, self).__init__(*args, **kwargs)
+        self.fields['first_name'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Введите ваше имя'})
+        self.fields['last_name'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Введите вашу фамилию'})
+        self.fields['email'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Введите вашу электронную почту'})
 
 
 class ProfileEdit(forms.ModelForm):

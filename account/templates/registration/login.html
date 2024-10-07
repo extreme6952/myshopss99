@@ -1,32 +1,36 @@
 {% extends "base.html" %}
 
-
-{% block title %} Login {% endblock title %}
-
-
-
+{% block title %} Вход {% endblock title %}
 
 {% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h2>Авторизация</h2>
+                </div>
+                <div class="card-body">
+                    {% if form.errors %}
+                        <div class="alert alert-danger" role="alert">
+                            Ваше имя или пароль не совпали, пожалуйста проверьте правильность введённых данных.
+                        </div>
+                    {% else %}
+                        <p class="text-center">Пожалуйста, войдите в свой аккаунт.</p>
+                    {% endif %}
 
-    {% if form.errors %}
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary btn-block">Войти</button>
+                    </form>
 
-        <p> Ваше имя или пароль не совпали,
-        пожалуйста проверьте правильность введённых данных </p>
-
-    {% else %}
-
-        <p>Авторизуйтесь в личном кабинете</p>
-
-
-{% endif %}
-
-    <form method="post">
-
-        {{form.as_p}}
-        {% csrf_token %}
-        <input type="submit" value="login">
-    </form>
-
-   <a href="{% url "register" %}"> <p>Регистрация</p> </a> 
-
+                    <div class="text-center mt-3">
+                        <a href="{% url 'register' %}">Регистрация</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}

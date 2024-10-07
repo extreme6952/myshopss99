@@ -1,48 +1,37 @@
 {% extends "base.html" %}
 
-
-{% block title %} user edit {% endblock title %}
-
-
-
-
+{% block title %} Личный кабинет {% endblock title %}
 
 {% block content %}
-
-
-<div class="card mb-3">
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        
-          <img src=" {% if user.profiles.image %} {{user.profiles.image.url}} {% endif %}" class="card-img" alt="Фото профиля">
-        
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{user.first_name}} {{user.last_name}}</h5>
-          <p class="card-text">Электронная почта: {{user.email}}</p>
-          <p class="card-text">Телефон: +7 (919) 738-08-29</p>
-          
-        
-            <a href="{% url "profile_edit" %}">
-                <button type="button" class="btn btn-primary">Редактировать</button>
-            </a>
-        
-            {% if unpaid_orders %}
-          
-            <h1>Неоплаченные заказы</h1>
-        
-                {% for order in unpaid_orders %}
-                
-                    <a href="{% url "payment:process" %}">{{order.id}}</a>
-
-        
-        
-                {% endfor %}
-        
-        
-          {% endif %}
+<div class="container mt-5">
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="{% if user.profiles.image %}{{ user.profiles.image.url }}{% endif %}" class="card-img" alt="Фото профиля" style="object-fit: cover; height: 100%; width: 100%;">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
+                    <p class="card-text">Электронная почта: {{ user.email }}</p>
+                    <p class="card-text">Телефон: +7 (919) 738-08-29</p>
+                    <a href="{% url 'profile_edit' %}" class="btn btn-primary">Редактировать</a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
+
+    {% if unpaid_orders %}
+        <h2 class="text-center mb-4">Неоплаченные заказы</h2>
+        <ul class="list-group">
+            {% for order in unpaid_orders %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Заказ #{{ order.id }}
+                    <a href="{% url 'payment:process' %}" class="btn btn-success btn-sm">Оплатить</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="text-center">У вас нет неоплаченных заказов.</p>
+    {% endif %}
+</div>
 {% endblock content %}

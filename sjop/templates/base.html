@@ -1,93 +1,116 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <title>{% block title %} {% endblock %}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+        .carousel {
+            position: relative;
+            max-width: 1080px; /* Set the maximum width of the carousel */
+            margin: auto; /* Center the carousel horizontally */
+        }
+        
+        .carousel-item {
+            position: relative; /* Ensure the item is positioned relative for absolute children */
+        }
+        
+        .carousel-control-prev,
+        .carousel-control-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5%; /* Adjust width as needed */
+            height: 100%;
+            background-color: transparent; /* Make the controls transparent */
+            border: none; /* Remove the border */
+            z-index: 1; /* Ensure controls are above the images */
+        }
+        
+        .carousel-control-prev {
+            left: 10px; /* Adjust as needed */
+        }
+        
+        .carousel-control-next {
+            right: 10px; /* Adjust as needed */
+        }
+        
+        .product {
+            margin-bottom: 20px; /* Space between products */
+        }
 
-      .carousel {
-        position: relative;
-        max-width: 1080px; /* Set the maximum width of the carousel */
-        margin: auto; /* Center the carousel horizontally */
-    }
-    
-    .carousel-item {
-        position: relative; /* Ensure the item is positioned relative for absolute children */
-    }
-    
-    .carousel-control-prev,
-    .carousel-control-next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 5%; /* Adjust width as needed */
-        height: 100%;
-        background-color: transparent; /* Make the controls transparent */
-        border: none; /* Remove the border */
-        z-index: 1; /* Ensure controls are above the images */
-    }
-    
-    .carousel-control-prev {
-        left: 10px; /* Adjust as needed */
-    }
-    
-    .carousel-control-next {
-        right: 10px; /* Adjust as needed */
-    }
-    
-.product {
-    margin-bottom: 20px; /* Отступ между продуктами */
-}
+        .summary {
+            background-color: #f8f9fa; /* Background color for summary */
+            padding: 20px; /* Padding inside summary */
+            border-radius: 5px; /* Rounded corners */
+        }
 
-.summary {
-    background-color: #f8f9fa; /* Цвет фона для сводки */
-    padding: 20px; /* Отступ внутри сводки */
-    border-radius: 5px; /* Скругление углов */
-}
+        .summary-item {
+            display: flex; /* Use flexbox for alignment */
+            justify-content: space-between; /* Distribute items to edges */
+            margin-bottom: 10px; /* Space between summary items */
+        }
 
-.summary-item {
-    display: flex; /* Используем flexbox для выравнивания */
-    justify-content: space-between; /* Распределяем элементы по краям */
-    margin-bottom: 10px; /* Отступ между элементами сводки */
-}
-.form-group {
-    margin-bottom: 1rem; /* Отступ между элементами формы */
-}
+        .form-group {
+            margin-bottom: 1rem; /* Space between form elements */
+        }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-textarea {
-    width: 100%; /* Ширина полей ввода */
-    padding: 0.375rem 0.75rem; /* Внутренние отступы */
-    border: 1px solid #ced4da; /* Цвет границы */
-    border-radius: 0.25rem; /* Закругленные углы */
-    box-shadow: none; /* Убираем тень */
-}
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea {
+            width: 100%; /* Input field width */
+            padding: 0.375rem 0.75rem; /* Inner padding */
+            border: 1px solid #ced4da; /* Border color */
+            border-radius: 0.25rem; /* Rounded corners */
+            box-shadow: none; /* Remove shadow */
+        }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-textarea:focus {
-    border-color: #80bdff; /* Цвет границы при фокусе */
-    outline: 0; /* Убираем стандартное выделение */
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Тень при фокусе */
-}    
-  </style>
-  </head>
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        textarea:focus {
+            border-color: #80bdff; /* Border color on focus */
+            outline: 0; /* Remove default outline */
+            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Shadow on focus */
+        }    
 
+        .navbar-nav .nav-link {
+            transition: color 0.3s ease;
+        }
+      
+        .navbar-nav .nav-link:hover {
+            color: #ffc107; /* Change color on hover */
+        }
+      
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #343a40; /* Darken dropdown item on hover */
+        }
+      
+        .dropdown-menu .dropdown-item:focus {
+            background-color: #495057; /* Highlight on focus */
+        }
+    </style>
+</head>
 
-  <body>
+<body>
     {% include "product/includes/navbar.html" %}
-      {% block content %}
-      {% endblock %}
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
-  </body>
-  </html>
+    
+    <div class="container mt-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer class="bg-light text-center py-3">
+        <p>&copy; {{ current_year }} Your Company Name. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+</body>
+</html>
