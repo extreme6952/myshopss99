@@ -21,6 +21,17 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 
+@admin.register(Rating)
+class RatingTabularInline(admin.ModelAdmin):
+
+    list_display = ['product','user','created','active']
+
+    list_filter = ['created','active']
+
+    raw_id_fields = ['product',]
+
+
+
 
 @admin.register(Product)
 class AdminproductModel(admin.ModelAdmin):

@@ -6,6 +6,9 @@ from easy_thumbnails.fields import ThumbnailerImageField
 
 from django.contrib.auth.models import User
 
+from django.core.validators import MinValueValidator,MaxValueValidator
+
+from django.utils import timezone
 
 class Category(models.Model):
     name = models.CharField(max_length=250)
@@ -35,9 +38,6 @@ class Category(models.Model):
         )
 
 
-# class Profile(models.Model):
-
-#     user = models.ForeignKey(User)
 
 
 class Product(models.Model):
@@ -88,3 +88,46 @@ class ImageByproduct(models.Model):
                                                      sharpen=True),
                                   blank=True,
                                   null=True)
+
+
+
+class Rating(models.Model):
+
+    product = models.ForeignKey(Product,
+                                on_delete=models.CASCADE,
+                                related_name='stars_product')
+    
+    user = models.ForeignKey(User,
+                             on_delete=models.CASCADE)
+    
+    stars = models.IntegerField(
+        validators=[
+            MinValueValidator(1),
+            MaxValueValidator(5)
+        ]
+    )
+
+    text = models.TextField(blank=True)
+
+    created = models.DateTimeField(auto_now_add=True)
+
+    active = models.BooleanField(default=True)
+
+    class Meta:
+        
+        ordering = ['-product']
+
+        indexes = [
+            models.Index(fields=[
+                'product'
+            ])
+        ]
+
+        unique_together = ['product', 'user']
+
+
+    def __str__(self):
+        return f"Рейтинг товара {self.product} на {self.stars}"
+    
+
+

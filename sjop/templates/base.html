@@ -94,6 +94,35 @@
         .dropdown-menu .dropdown-item:focus {
             background-color: #495057; /* Highlight on focus */
         }
+
+        .star-rating {
+            direction: rtl; /* Makes the stars align right to left */
+            display: flex;
+        }
+        
+        .star {
+            font-size: 30px; /* Adjust size as needed */
+            color: #ccc; /* Default color */
+            cursor: pointer;
+        }
+        
+        .star:hover,
+        .star:hover ~ .star {
+            color: gold; /* Color when hovering */
+        }
+        
+        input[type='radio'] {
+            display: none; /* Hide radio buttons */
+        }
+        
+        input[type='radio']:checked ~ .star {
+            color: gold; /* Color when selected */
+        }
+        
+        /* This rule ensures that only the selected star and those before it are highlighted */
+        input[type='radio']:checked + label {
+            color: gold; /* Highlight selected star */
+        }
     </style>
 </head>
 

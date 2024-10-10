@@ -1,0 +1,44 @@
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Оставьте свой отзыв</h2>
+    <form action="{% url 'shop:rating_product' product.id product.slug %}" method="post" class="bg-light p-4 rounded shadow">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="{{ form.text.id_for_label }}" class="font-weight-bold">{{ form.text.label }}</label>
+            {{ form.text }}
+            <small class="form-text text-muted">Ваш отзыв поможет другим покупателям.</small>
+        </div>
+
+        {% comment %} <div class="form-group">
+            <label for="{{ form.stars.id_for_label }}" class="font-weight-bold">{{ form.stars.label }}</label>
+            {{ form.stars }}
+            <small class="form-text text-muted">Пожалуйста, оцените продукт от 1 до 5 звёзд.</small>
+        </div> {% endcomment %}
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-lg">Оставить отзыв</button>
+        </div>
+        <div class="form-group">
+            <label for="stars" class="font-weight-bold">Рейтинг:</label>
+            <div class="star-rating">
+                <input type="radio" id="star5" name="stars" value="5" />
+                <label for="star5" class="star">&#9733;</label>
+                
+                <input type="radio" id="star4" name="stars" value="4" />
+                <label for="star4" class="star">&#9733;</label>
+                
+                <input type="radio" id="star3" name="stars" value="3" />
+                <label for="star3" class="star">&#9733;</label>
+                
+                <input type="radio" id="star2" name="stars" value="2" />
+                <label for="star2" class="star">&#9733;</label>
+                
+                <input type="radio" id="star1" name="stars" value="1" />
+                <label for="star1" class="star">&#9733;</label>
+            </div>
+            <small class="form-text text-muted">Нажмите на звёздочки для оценки.</small>
+        </div>
+    </form>
+</div>
+{% endblock content %}

@@ -22,17 +22,61 @@
         </a>
     </div>
 
-    <div class="col-12 col-md-8 mx-auto my-3">
-        <h1 class="product_title text-center font-weight-bold">{{ product.name }}</h1>
-        <h3 class="text-center font-italic text-success mb-4">{{ product.price }}₽</h3>
+    <div class="col-12 col-md-8 mx-auto my-3 text-center">
+        <h1 class="product_title font-weight-bold">{{ product.name }}</h1>
+        <h3 class="font-italic text-success mb-4">{{ product.price }}₽</h3>
         
-        <p class="text-justify product_text text-center">{{ product.description }}</p>
+        <p class="text-justify product_text">{{ product.description }}</p>
 
-        <form action="{% url 'cart:add_product_cart' product.id %}" method="post" class="text-center mt-4">
+        <form action="{% url 'cart:add_product_cart' product.id %}" method="post" class="mt-4">
             {{ cart_add_form }}
             {% csrf_token %}
             <button type="submit" class="btn btn-primary btn-lg">Добавить товар в корзину</button>
         </form>
     </div>
+
+    {% with ratings.count as total_rating %}
+        <h4 class="text-center my-4">{{ total_rating }} Отзывов</h4>
+
+        {% if not total_rating %}
+
+            <h4>Будьте первым кто оставит отзыв!</h4>
+
+        {% endif %}
+    
+    {% endwith %}
+
+    <div class="row">
+        {% for rating in ratings %}
+        <div class="col-md-6 mb-4">
+            <div class="card border-light shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ rating.user.first_name }} {{ rating.user.last_name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ rating.created }}</h6>
+                    <p class="card-text">{{ rating.text }}</p>
+                    <p class="card-text">
+                        <strong>Рейтинг:</strong> 
+                        {% for i in "12345"|slice:":rating.stars"|make_list %}
+                            {% if forloop.counter <= rating.stars %}
+                                ⭐
+                            {% else %}
+                                ☆
+                            {% endif %}
+                        {% empty %}
+                            Нет рейтинга
+                        {% endfor %}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Rating Form -->
+    <div class="my-5">
+        {% include "product/includes/rating_form.html" %}
+    </div>
+
 </div>
+
 {% endblock content %}
