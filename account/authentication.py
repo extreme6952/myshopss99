@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class UserAuthenticetionEmail:
 
-    ''' Авторизация юзера по email '''
+    ''' Авторизация юзера по email и по телефону'''
 
     def authenticate(self,request,username=None,password=None):
 
@@ -21,8 +21,15 @@ class UserAuthenticetionEmail:
         
         except(User.DoesNotExist,User.MultipleObjectsReturned):
 
-            return None
+            try:
+
+                user = User.objects.get(phone_number=username)
+
+            except User.DoesNotExist:
+
+                return None
         
+            return None
 
     def get_user(self,user_id):
 
@@ -33,3 +40,4 @@ class UserAuthenticetionEmail:
         except User.DoesNotExist:
 
             return None
+

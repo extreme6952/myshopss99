@@ -20,12 +20,18 @@ def dashboard(request):
 
     unpaid_order = Order.objects.filter(user=request.user,paid=False)
 
+    orders_history = Order.objects.filter(user=request.user,paid=True)
+
+    market_shop = getattr(request.user,'user_market_shop',None)
+
     return render(
         request,
         'account/user/dashboard.html',
         {
             'profile':profile,
             'unpaid_orders':unpaid_order,
+            'history_orders':orders_history,
+            'market_shop':market_shop,
         }
     )
 
@@ -44,7 +50,7 @@ def user_registration(request):
 
             new_user.save()
 
-            Profile.objects.create(user=new_user)
+            Profile.objects.create(user=new_user,)
 
             messages.success(
                 request,

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+    {% for stores in store %}
+    
+        <a href="{{stores.get_absolute_url}}">
+            {{stores.name}}
+        </a>
+    
+    
+    {% endfor %}
+
+{% endblock content %}

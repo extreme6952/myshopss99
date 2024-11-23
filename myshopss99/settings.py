@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'coupens.apps.CoupensConfig',
     'easy_thumbnails',
     'widget_tweaks',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
@@ -147,7 +148,7 @@ LOGIN_URL = 'login'
 
 LOGIN_REDIRECT_URL = 'shop:product'
 
-LOGOUT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'logout'
 
 
 AUTHENTICATION_BACKENDS = [

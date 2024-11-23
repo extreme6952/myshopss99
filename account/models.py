@@ -4,9 +4,11 @@ from django.urls import reverse
 
 from django.contrib.auth.models import User
 
+from phonenumber_field.modelfields import PhoneNumberField
 
+from django.contrib.auth.models import AbstractBaseUser
 
-
+from django.contrib.auth.models import PermissionsMixin
 
 
 class Profile(models.Model):
@@ -15,6 +17,7 @@ class Profile(models.Model):
                                 on_delete=models.CASCADE,
                                 related_name='profiles')
     
+
     created = models.DateTimeField(auto_now_add=True)
 
     updated = models.DateTimeField(auto_now=True)

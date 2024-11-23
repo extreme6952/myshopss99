@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
                     <p class="card-text">Электронная почта: {{ user.email }}</p>
-                    <p class="card-text">Телефон: +7 (919) 738-08-29</p>
+                    <p class="card-text">Телефон: {{user.phone_number}}</p>
                     <a href="{% url 'profile_edit' %}" class="btn btn-primary">Редактировать</a>
                 </div>
             </div>
@@ -34,4 +34,17 @@
         <p class="text-center">У вас нет неоплаченных заказов.</p>
     {% endif %}
 </div>
+
+<a href="{{ market_shop.get_absolute_url }}"> {{market_shop.name}} </a>
+
+
+    {% for order in history_orders %}
+
+
+        {{order.id}} {{order.created}}
+
+
+    {% endfor %}
+
+
 {% endblock content %}

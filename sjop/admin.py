@@ -19,6 +19,12 @@ class CategoryAdmin(admin.ModelAdmin):
 
     prepopulated_fields = {'slug':('name',)}
 
+@admin.register(CategoryMarketShop)
+class CategoryAdminStore(admin.ModelAdmin):
+    
+    list_display = ['name','slug']
+
+    prepopulated_fields = {'slug':('name',)}
 
 
 @admin.register(Rating)
@@ -36,7 +42,7 @@ class RatingTabularInline(admin.ModelAdmin):
 @admin.register(Product)
 class AdminproductModel(admin.ModelAdmin):
 
-    list_display = ['category','name','price','available','created']
+    list_display = ['name','category','price','available','created']
 
     list_filter = ['created','updated','available']
 
@@ -46,3 +52,13 @@ class AdminproductModel(admin.ModelAdmin):
 
     inlines = [TabularImagePhoto]
 
+
+
+@admin.register(MarketShop)
+class AdminMarketshopModel(admin.ModelAdmin):
+
+    list_display = ['name','slug',]
+
+    list_filter = ['created',]
+
+    search_fields = ['name']

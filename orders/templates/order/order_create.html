@@ -6,7 +6,7 @@
 <div class="container mt-5">
     <h1 class="mb-4">Создание заказа</h1>
 
-    {% if cart.coupon %}
+    {% if cart %}
         <h2>Ваши товары:</h2>
         <div class="table-responsive">
             <table class="table table-bordered">
@@ -31,11 +31,16 @@
             </table>
         </div>
 
-        <p class="text-blue">Промокод "{{cart.coupon.code}}" даёт {{cart.coupon.discount}}% скидки</p>
-        <div class="alert alert-info">
-            <strong>Итого:</strong> {{ cart.get_total_price_apply_discount }}$
-        </div>
-
+        {% if cart.coupon %}
+            <p class="text-blue">Промокод "{{cart.coupon.code}}" даёт {{cart.coupon.discount}}% скидки</p>
+            <div class="alert alert-info">
+                <strong>Итого:</strong> {{ cart.get_total_price_apply_discount }}$
+            </div>
+        {% else %}
+            <div class="alert alert-info">
+                <strong>Итого:</strong> {{ cart.get_total_price }}$
+            </div>
+        {% endif %}
     {% else %}
         <p class="alert alert-warning">Ваша корзина пуста.</p>
     {% endif %}
@@ -46,5 +51,9 @@
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Отправить заказ</button>
     </form>
+
+    {% if not cart %}
+        <p class="alert alert-info">Добавьте товары в корзину, чтобы создать заказ.</p>
+    {% endif %}
 </div>
 {% endblock content %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+{% block title %} 55 {% endblock title %}
+
+
+{% block content %}
+
+    {{store.name}}
+
+    {% if store.image %} <img src="{{store.image.url}}" alt="">  {% endif %}
+
+    
+    {{store.user.first_name}}
+{% endblock content %}

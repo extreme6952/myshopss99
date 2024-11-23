@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 
 from django.http import Http404
 
+from phonenumber_field.formfields import PhoneNumberField
+
 from .models import *
 
 
@@ -19,7 +21,7 @@ class UserRegistrationForm(forms.ModelForm):
 
         model = User
 
-        fields = ['username','first_name','last_name','email']
+        fields = ['username','first_name','last_name','email','phone_number']
 
     
     def clean_password2(self):

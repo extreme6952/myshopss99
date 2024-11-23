@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Вы вышли из аккаунта{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card text-center shadow-lg">
+                <div class="card-header bg-primary text-white">
+                    <h3>Вы вышли из аккаунта</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Спасибо, что использовали наш сервис!</p>
+                    <a href="{% url 'login' %}" class="btn btn-success btn-lg">Авторизуйтесь снова</a>
+                </div>
+                <div class="card-footer text-muted">
+                    © {{ current_year }} Ваш сайт
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background: url('https://source.unsplash.com/random/1920x1080/?nature,water') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+    }
+    .card {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+</style>
+
+{% endblock content %}

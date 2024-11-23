@@ -10,6 +10,14 @@ from django.core.validators import MinValueValidator,MaxValueValidator
 
 from django.utils import timezone
 
+from django.utils.text import slugify
+
+from .fields import OrderField
+
+from unidecode import unidecode
+
+
+
 class Category(models.Model):
     name = models.CharField(max_length=250)
 
@@ -30,6 +38,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
     def get_absolute_url(self):
         return reverse(
             "shop:product_category", args=[
@@ -38,9 +47,78 @@ class Category(models.Model):
         )
 
 
+class CategoryMarketShop(models.Model):
+
+    name = models.CharField(max_length=250,unique=True)
+
+    slug = models.SlugField(max_length=250,unique=True)
+
+    class Meta:
+
+        ordering = ['name']
+
+        indexes = [
+            models.Index(fields=['name'])
+        ]
+
+        verbose_name = 'Категории магазинов'
+
+        verbose_name_plural = 'Категория магазина'
+
+    def __str__(self):
+        return self.name
+    
+
+class MarketShop(models.Model):
+
+    user = models.OneToOneField(User,
+                                on_delete=models.PROTECT,
+                                related_name='user_market_shop')
+    
+    category = models.ForeignKey(CategoryMarketShop,
+                                 on_delete=models.CASCADE,
+                                 related_name='category_shop',
+                                 null=True,
+                                 blank=True)
+
+    name = models.CharField(max_length=250,unique=True)   
+
+    slug = models.SlugField(max_length=250,unique=True,blank=True)
+
+    created = models.DateTimeField(auto_now_add=True)
+
+    description = models.TextField(blank=True)
+
+    image = models.ImageField(upload_to='%D/%m/y',blank=True)
+
+    class Meta:
+
+        ordering = ['-user']
+
+
+    def __str__(self,):
+
+        return  self.name
+    
+
+    def save(self,*args, **kwargs):
+
+        if not self.slug:
+
+            self.slug = slugify(unidecode(self.name)) 
+
+        super().save(*args, **kwargs)
+
+    
+    def get_absolute_url(self):
+        return reverse("shop:detail_store", args=[self.id,self.slug])
+    
 
 
 class Product(models.Model):
+
+    store = models.ForeignKey(MarketShop,on_delete=models.SET_NULL,null=True,blank=True)
+
     category = models.ForeignKey(Category,
                                  on_delete=models.CASCADE,
                                  related_name='products')
@@ -59,6 +137,8 @@ class Product(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     updated = models.DateTimeField(auto_now=True)
+
+    order_field = OrderField(blank=True,for_fields=['category'])
 
     class Meta:
         ordering = ['name']
@@ -129,5 +209,4 @@ class Rating(models.Model):
     def __str__(self):
         return f"Рейтинг товара {self.product} на {self.stars}"
     
-
 
