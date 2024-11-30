@@ -33,18 +33,34 @@
     {% else %}
         <p class="text-center">У вас нет неоплаченных заказов.</p>
     {% endif %}
+
+    <h2 class="text-center mb-4">История заказов</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID заказа</th>
+                <th scope="col">Дата создания</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in history_orders %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.created }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            {% if market_shop %}
+                <a href="{% url "shop:product_store_detail" market_shop.id %}" class="btn btn-info btn-block">Магазин: {{ market_shop.name }}</a>
+            {% else %}
+                <a href="#" class="btn btn-warning btn-block">Создать магазин</a>
+            {% endif %}
+            <a href="{% url "shop:create_product_from" %}" class="btn btn-primary btn-block mt-3">Добавить новый продукт</a>
+        </div>
+    </div>
 </div>
-
-<a href="{{ market_shop.get_absolute_url }}"> {{market_shop.name}} </a>
-
-
-    {% for order in history_orders %}
-
-
-        {{order.id}} {{order.created}}
-
-
-    {% endfor %}
-
-
 {% endblock content %}

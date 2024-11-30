@@ -1,12 +1,14 @@
 from django.shortcuts import render,get_object_or_404,redirect, HttpResponse
 from django.views.generic.edit import UpdateView,CreateView,DeleteView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin,PermissionRequiredMixin
+from django.views.generic.base import TemplateResponseMixin,View
+from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
 from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
 from django.views.generic.list import ListView
 from django.views.generic.base import View
 from cart.forms import ProductCartFormAdd
-from django.urls import reverse_lazy
 from orders.models import Order
 from django.contrib import messages
 from django.db import IntegrityError
@@ -21,15 +23,25 @@ class ProductStoreUserMixin(ListView):
     fields = ['name','description','price','available']
     success_url = reverse_lazy('')
 
+    def get_queryset(self,store_id=None):
+        qs = super().get_queryset()
+        
+        #если store_id сошлётся на None, то тогда фильтрация не будет выполнена
+        if store_id is None:
+
+            qs = qs.filter(store_id=store_id)
+
+        return qs
+
+class StoreFilterProductMixin:
+
     def get_queryset(self):
         qs = super().get_queryset()
-        return qs.filter(user=self.request.user)
 
+        store_id = self.kwargs.get('store_id')
 
-class ProductStoreManageView(ProductStoreUserMixin,ListView):
-
-    template_name = 'product/list_product_store.html'
-
+        return qs.filter(store_id=store_id)
+    
 
 class ProductStoreEditMixin(ProductStoreUserMixin):
     template_name = 'product/form.html'
@@ -39,29 +51,87 @@ class ProductStoreEditMixin(ProductStoreUserMixin):
         return super().form_valid(form)
 
 
-class ProductStoreUser(ProductStoreUserMixin,ListView,LoginRequiredMixin):
-    pass
+#отображение продуктов в конкретном магазиние
+class ProductStoreManageView(StoreFilterProductMixin,ListView):
+
+    model = Product
+
+    template_name = 'product/list_product_store.html'
+
+    context_object_name = 'products'
 
 
-class ProductStoreUpdate(ProductStoreEditMixin,UpdateView):
-
-    pass
 
 
-class ProductStoreDeleteView(ProductStoreUserMixin,DeleteView):
+class ProductStoreUpdate(ProductStoreEditMixin,PermissionRequiredMixin,UpdateView):
+
+    permission_required = 'sjop.update_product'
+
+
+class ProductStoreDeleteView(ProductStoreUserMixin,PermissionRequiredMixin,DeleteView):
 
     template_name = 'product/delete.html'
+    permission_required = 'sjop.delete_product'
 
 
-class ProductCreateView(ProductStoreEditMixin,CreateView):
+class ProductCreateView(CreateView):
+    model = Product
+    fields = ['category', 'name', 'description', 'price', 'available']
+    template_name = 'product/form.html'
 
-    pass
+    def form_valid(self, form):
+
+        try:
+            market_shop = self.request.user.user_market_shop
+        except AttributeError:
+            return redirect('login')
+
+        product = form.save(commit=False)
+        product.store = market_shop
+        product.save()
+
+        return redirect(product.get_absolute_url())
+        
+
+class StoreProductUpdateView(TemplateResponseMixin,LoginRequiredMixin, View):
+
+    product = None
+    template_name = 'product/product_image_update.html'
+
+    def get_formset(self, data=None,files=None):
+        return ImageByproductFormAddProduct(instance=self.product, data=data,files=files)
 
 
+    def dispatch(self, request, *args, **kwargs):
+        pk = kwargs['pk']  # Получаем первичный ключ из аргументов URL
+        self.product = get_object_or_404(Product, id=pk)
+        return super().dispatch(request, *args, **kwargs)
 
 
+    def get(self, requser, *args, **kwargs):
+        formset = self.get_formset()
+        return self.render_to_response({
+            'product': self.product,
+            'formset': formset,
+        })
 
 
+    def post(self, request, *args, **kwargs):
+        
+        formset = self.get_formset(data=request.POST,files=request.FILES)
+        
+        if formset.is_valid():
+            formset.save()
+            return redirect(self.product.get_absolute_url())
+        
+        else:
+
+            print(formset.errors)
+
+        return self.render_to_response({
+            'product': self.product,
+            'formset': formset,
+        })
 
 
 
@@ -90,7 +160,6 @@ def product_list(request,category_slug=None):
             'category':category
          }
     )
-
 
 def product_detail(request,id,slug):
 

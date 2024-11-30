@@ -13,6 +13,9 @@ urlpatterns = [
     path('<int:id>/<slug:slug>/rating-product/', views.review_user_by_product, name='rating_product'),
     path('create-store/',views.create_store,name='create_market'),
     path('list-store',views.store_list,name='store-list'),
-    path('detail-store/<int:id>/<slug:slug>/',views.store_detail,name='detail_store'),
-    path('store-detail/',views.ProductStoreManageView.as_view(),name='product_store_detail')
+    path('store-detail<int:store_id>/',views.ProductStoreManageView.as_view(),name='product_store_detail'),
+    path('create-product-store/',views.ProductCreateView.as_view(),name='create_product_from'),
+    path('update-product/<int:pk>/<int:store_id>/',views.StoreProductUpdateView.as_view(), name='image_product_update'),
+   
+
 ]

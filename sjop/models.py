@@ -16,13 +16,18 @@ from .fields import OrderField
 
 from unidecode import unidecode
 
-
+CATEGORY_TYPES = (
+    ('PRODUCT', 'Продукт'),
+    ('SHOP', 'Магазин'),
+)
 
 class Category(models.Model):
     name = models.CharField(max_length=250)
 
     slug = models.CharField(max_length=250,
                             unique=True)
+    
+    type = models.CharField(max_length=200,choices=CATEGORY_TYPES)
 
     class Meta:
         ordering = ['name']
@@ -46,41 +51,12 @@ class Category(models.Model):
             ]
         )
 
-
-class CategoryMarketShop(models.Model):
-
-    name = models.CharField(max_length=250,unique=True)
-
-    slug = models.SlugField(max_length=250,unique=True)
-
-    class Meta:
-
-        ordering = ['name']
-
-        indexes = [
-            models.Index(fields=['name'])
-        ]
-
-        verbose_name = 'Категории магазинов'
-
-        verbose_name_plural = 'Категория магазина'
-
-    def __str__(self):
-        return self.name
-    
-
 class MarketShop(models.Model):
 
     user = models.OneToOneField(User,
                                 on_delete=models.PROTECT,
                                 related_name='user_market_shop')
     
-    category = models.ForeignKey(CategoryMarketShop,
-                                 on_delete=models.CASCADE,
-                                 related_name='category_shop',
-                                 null=True,
-                                 blank=True)
-
     name = models.CharField(max_length=250,unique=True)   
 
     slug = models.SlugField(max_length=250,unique=True,blank=True)
@@ -109,9 +85,6 @@ class MarketShop(models.Model):
 
         super().save(*args, **kwargs)
 
-    
-    def get_absolute_url(self):
-        return reverse("shop:detail_store", args=[self.id,self.slug])
     
 
 
@@ -155,6 +128,12 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse("shop:product_detail", args=[self.id,
                                                     self.slug])
+    
+    def save(self,*args, **kwargs):
+
+        if not self.slug:
+            self.slug = slugify(unidecode(self.name)) 
+        super().save(*args, **kwargs)
 
 
 class ImageByproduct(models.Model):

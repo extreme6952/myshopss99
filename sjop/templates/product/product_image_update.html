@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Обновление{% endblock title %}
+
+{% comment %}
+    Шаблон для проверки логики вьюхи
+{% endcomment %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <h2 class="mb-4 text-center">Обновление данных</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ formset.management_form }}
+                {% for form in formset %}
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Запись №{{ forloop.counter }}</h5>
+                            {{ form.as_p }}
+                        </div>
+                    </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary btn-block">Сохранить изменения</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

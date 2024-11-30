@@ -19,12 +19,6 @@ class CategoryAdmin(admin.ModelAdmin):
 
     prepopulated_fields = {'slug':('name',)}
 
-@admin.register(CategoryMarketShop)
-class CategoryAdminStore(admin.ModelAdmin):
-    
-    list_display = ['name','slug']
-
-    prepopulated_fields = {'slug':('name',)}
 
 
 @admin.register(Rating)

@@ -1,7 +1,6 @@
 from django import forms
-
 from .models import *
-
+from django.forms.models import inlineformset_factory
 
 class RatingModelForm(forms.ModelForm):
 
@@ -37,14 +36,13 @@ class StoreCreateForm(forms.ModelForm):
 
         model = MarketShop
 
-        fields = ['name','image','description','category']
+        fields = ['name','image','description',]
 
 
     def __init__(self,*args, **kwargs):
 
         super(StoreCreateForm,self).__init__(*args, **kwargs)
 
-        self.fields['category'].queryset = CategoryMarketShop.objects.all()
 
         self.fields['description'].widget.attrs.update({
             'class':'form-control',
@@ -62,3 +60,13 @@ class ProductForm(forms.ModelForm):
 
         fields = ['store', 'category', 'name', 'slug', 
                   'description', 'price', 'available']
+        
+
+
+ImageByproductFormAddProduct = inlineformset_factory(
+    Product,
+    ImageByproduct,
+    fields=['image'],
+    extra=1,
+    can_delete=True
+)
