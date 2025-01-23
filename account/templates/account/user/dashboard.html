@@ -57,9 +57,8 @@
             {% if market_shop %}
                 <a href="{% url "shop:product_store_detail" market_shop.id %}" class="btn btn-info btn-block">Магазин: {{ market_shop.name }}</a>
             {% else %}
-                <a href="#" class="btn btn-warning btn-block">Создать магазин</a>
+                <a href="{% url "shop:create_market" %}" class="btn btn-warning btn-block">Создать магазин</a>
             {% endif %}
-            <a href="{% url "shop:create_product_from" %}" class="btn btn-primary btn-block mt-3">Добавить новый продукт</a>
         </div>
     </div>
 </div>

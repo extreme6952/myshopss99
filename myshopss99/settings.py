@@ -87,10 +87,16 @@ WSGI_APPLICATION = 'myshopss99.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'myshopss99_database',
+        'USER': 'extreme6952',
+        'PASSWORD': 'mypassword',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+   
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -190,3 +196,4 @@ CELERY_BEAT_SCHEDULE = {
         'schedule': crontab(minute='*/30'),  # Каждые 30 минут
     },
 }
+

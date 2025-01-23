@@ -1,0 +1,2069 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2024-11-14T00:39:01.987Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "1",
+    "object_repr": "Автомобили",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2024-11-14T00:39:08.048Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "2",
+    "object_repr": "Одежда",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2024-11-14T00:39:15.611Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Avto",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2024-11-14T00:39:20.518Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Moto",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2024-11-14T00:42:16.860Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "Товар №1. Имя товара McLaren R1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"image byproduct\", \"object\": \"ImageByproduct object (1)\"}}, {\"added\": {\"name\": \"image byproduct\", \"object\": \"ImageByproduct object (2)\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2024-11-14T00:51:33.633Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "Товар №2. Имя товара qwe qweqwe qw",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"image byproduct\", \"object\": \"ImageByproduct object (3)\"}}, {\"added\": {\"name\": \"image byproduct\", \"object\": \"ImageByproduct object (4)\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2024-11-23T14:26:51.696Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "Товар №2. Имя товара qwe qweqwe qw",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2024-11-27T02:25:39.485Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "4",
+    "object_repr": "Товар №4. Имя товара Nissan GTR-389",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2024-11-27T02:26:13.835Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "3",
+    "object_repr": "Товар №3. Имя товара Avto",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2024-11-27T02:27:12.099Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "5",
+    "object_repr": "Товар №5. Имя товара Nissan GTR-389",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2024-11-27T02:28:24.821Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "6",
+    "object_repr": "Товар №6. Имя товара suzuki gsxr",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2024-11-29T21:21:09.872Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "JDM Auto",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2024-11-29T21:21:21.536Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "Бытовая техника",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2024-11-29T21:40:50.962Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "Товар №1. Имя товара McLaren R1",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2024-11-29T21:40:51.344Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "12",
+    "object_repr": "Товар №12. Имя товара Nissan GTR-34",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2024-11-29T21:40:51.467Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "11",
+    "object_repr": "Товар №11. Имя товара Nissan GTR-34",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2024-11-29T21:40:52.358Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "10",
+    "object_repr": "Товар №10. Имя товара Nissan GTR-34",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2024-11-29T21:40:52.449Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "9",
+    "object_repr": "Товар №9. Имя товара Nissan GTR-34",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2024-11-29T21:40:52.540Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "8",
+    "object_repr": "Товар №8. Имя товара Nissan GTR-34",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2024-11-29T21:40:52.630Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "Товар №2. Имя товара qwe qweqwe qw",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2024-11-29T21:40:52.721Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "7",
+    "object_repr": "Товар №7. Имя товара suzuki gsxr",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2024-11-29T22:39:15.460Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "25",
+    "object_repr": "Товар №25. Имя товара 1daskf;jasd",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2024-11-29T22:39:15.721Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "24",
+    "object_repr": "Товар №24. Имя товара 1daskf;jasd",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2024-11-29T22:39:15.815Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "23",
+    "object_repr": "Товар №23. Имя товара 1daskf;jasd",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2024-11-29T22:39:15.922Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "22",
+    "object_repr": "Товар №22. Имя товара 3242332",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2024-11-29T22:39:15.996Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "26",
+    "object_repr": "Товар №26. Имя товара Nissan GTR-34",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2024-11-29T22:39:16.070Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "21",
+    "object_repr": "Товар №21. Имя товара Nissan GTR-34",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2024-11-29T22:39:16.144Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "20",
+    "object_repr": "Товар №20. Имя товара Nissan GTR-34",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2024-11-29T22:39:16.227Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "13",
+    "object_repr": "Товар №13. Имя товара Nissan GTR-34",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2024-11-29T22:39:16.340Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "19",
+    "object_repr": "Товар №19. Имя товара Nissan GTR-35",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2024-11-29T22:39:16.456Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "18",
+    "object_repr": "Товар №18. Имя товара Nissan GTR-35",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2024-11-29T22:39:16.571Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "17",
+    "object_repr": "Товар №17. Имя товара Nissan GTR-35",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2024-11-29T22:39:16.656Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "16",
+    "object_repr": "Товар №16. Имя товара Nissan GTR-35",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2024-11-29T22:39:16.728Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "15",
+    "object_repr": "Товар №15. Имя товара Nissan GTR-35",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2024-11-29T22:39:16.821Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "14",
+    "object_repr": "Товар №14. Имя товара Nissan GTR-35",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2024-11-29T23:47:21.590Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "27",
+    "object_repr": "Товар №27. Имя товара Nissan GTR-34",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"image byproduct\", \"object\": \"ImageByproduct object (10)\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2024-11-29T23:48:50.726Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "28",
+    "object_repr": "Товар №28. Имя товара 132123",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"image byproduct\", \"object\": \"ImageByproduct object (11)\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2024-11-30T06:41:33.673Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Заказ 2",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Paid\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2025-01-22T23:32:29.002Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "4",
+    "object_repr": "Заказ 4",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2025-01-22T23:32:29.064Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "3",
+    "object_repr": "Заказ 3",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2025-01-22T23:32:29.072Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Заказ 2",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "account.profile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "created": "2024-11-14T00:40:57.359Z",
+    "updated": "2024-12-19T11:30:56.864Z",
+    "image": "2024/12/19/bmw_vision_efficientdynamics_100297_1600x900.jpg"
+  }
+},
+{
+  "model": "account.profile",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "created": "2024-11-25T00:50:39.851Z",
+    "updated": "2024-11-25T02:01:53.911Z",
+    "image": "2024/11/25/cZwtX6AGi2c.jpg"
+  }
+},
+{
+  "model": "account.profile",
+  "pk": 3,
+  "fields": {
+    "user": 3,
+    "created": "2024-12-01T19:46:51.753Z",
+    "updated": "2024-12-01T19:47:11.027Z",
+    "image": "2024/12/01/sad.jpg"
+  }
+},
+{
+  "model": "account.profile",
+  "pk": 4,
+  "fields": {
+    "user": 4,
+    "created": "2024-12-19T11:35:28.171Z",
+    "updated": "2024-12-19T11:35:47.836Z",
+    "image": "2024/12/19/mclaren_p1_mclaren_avtomobil_316980_3840x2400.jpg"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add profile",
+    "content_type": 2,
+    "codename": "add_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change profile",
+    "content_type": 2,
+    "codename": "change_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete profile",
+    "content_type": 2,
+    "codename": "delete_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view profile",
+    "content_type": 2,
+    "codename": "view_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 3,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 3,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 3,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 3,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 4,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 4,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 4,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 4,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 5,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 5,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 5,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 5,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 6,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 6,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 6,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 6,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 7,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 7,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 7,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 7,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add Категория",
+    "content_type": 8,
+    "codename": "add_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change Категория",
+    "content_type": 8,
+    "codename": "change_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete Категория",
+    "content_type": 8,
+    "codename": "delete_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view Категория",
+    "content_type": 8,
+    "codename": "view_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add product",
+    "content_type": 9,
+    "codename": "add_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change product",
+    "content_type": 9,
+    "codename": "change_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete product",
+    "content_type": 9,
+    "codename": "delete_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view product",
+    "content_type": 9,
+    "codename": "view_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add image byproduct",
+    "content_type": 10,
+    "codename": "add_imagebyproduct"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change image byproduct",
+    "content_type": 10,
+    "codename": "change_imagebyproduct"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete image byproduct",
+    "content_type": 10,
+    "codename": "delete_imagebyproduct"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view image byproduct",
+    "content_type": 10,
+    "codename": "view_imagebyproduct"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add rating",
+    "content_type": 11,
+    "codename": "add_rating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change rating",
+    "content_type": 11,
+    "codename": "change_rating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete rating",
+    "content_type": 11,
+    "codename": "delete_rating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view rating",
+    "content_type": 11,
+    "codename": "view_rating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add market shop",
+    "content_type": 12,
+    "codename": "add_marketshop"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change market shop",
+    "content_type": 12,
+    "codename": "change_marketshop"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete market shop",
+    "content_type": 12,
+    "codename": "delete_marketshop"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view market shop",
+    "content_type": 12,
+    "codename": "view_marketshop"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add Категории магазинов",
+    "content_type": 13,
+    "codename": "add_categorymarketshop"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change Категории магазинов",
+    "content_type": 13,
+    "codename": "change_categorymarketshop"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete Категории магазинов",
+    "content_type": 13,
+    "codename": "delete_categorymarketshop"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view Категории магазинов",
+    "content_type": 13,
+    "codename": "view_categorymarketshop"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add order",
+    "content_type": 14,
+    "codename": "add_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change order",
+    "content_type": 14,
+    "codename": "change_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete order",
+    "content_type": 14,
+    "codename": "delete_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view order",
+    "content_type": 14,
+    "codename": "view_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 57,
+  "fields": {
+    "name": "Can add order item",
+    "content_type": 15,
+    "codename": "add_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 58,
+  "fields": {
+    "name": "Can change order item",
+    "content_type": 15,
+    "codename": "change_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 59,
+  "fields": {
+    "name": "Can delete order item",
+    "content_type": 15,
+    "codename": "delete_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 60,
+  "fields": {
+    "name": "Can view order item",
+    "content_type": 15,
+    "codename": "view_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 61,
+  "fields": {
+    "name": "Can add coupone",
+    "content_type": 16,
+    "codename": "add_coupone"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 62,
+  "fields": {
+    "name": "Can change coupone",
+    "content_type": 16,
+    "codename": "change_coupone"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 63,
+  "fields": {
+    "name": "Can delete coupone",
+    "content_type": 16,
+    "codename": "delete_coupone"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 64,
+  "fields": {
+    "name": "Can view coupone",
+    "content_type": 16,
+    "codename": "view_coupone"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 65,
+  "fields": {
+    "name": "Can add source",
+    "content_type": 17,
+    "codename": "add_source"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 66,
+  "fields": {
+    "name": "Can change source",
+    "content_type": 17,
+    "codename": "change_source"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 67,
+  "fields": {
+    "name": "Can delete source",
+    "content_type": 17,
+    "codename": "delete_source"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 68,
+  "fields": {
+    "name": "Can view source",
+    "content_type": 17,
+    "codename": "view_source"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 69,
+  "fields": {
+    "name": "Can add thumbnail",
+    "content_type": 18,
+    "codename": "add_thumbnail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 70,
+  "fields": {
+    "name": "Can change thumbnail",
+    "content_type": 18,
+    "codename": "change_thumbnail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 71,
+  "fields": {
+    "name": "Can delete thumbnail",
+    "content_type": 18,
+    "codename": "delete_thumbnail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 72,
+  "fields": {
+    "name": "Can view thumbnail",
+    "content_type": 18,
+    "codename": "view_thumbnail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 73,
+  "fields": {
+    "name": "Can add thumbnail dimensions",
+    "content_type": 19,
+    "codename": "add_thumbnaildimensions"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 74,
+  "fields": {
+    "name": "Can change thumbnail dimensions",
+    "content_type": 19,
+    "codename": "change_thumbnaildimensions"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 75,
+  "fields": {
+    "name": "Can delete thumbnail dimensions",
+    "content_type": 19,
+    "codename": "delete_thumbnaildimensions"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 76,
+  "fields": {
+    "name": "Can view thumbnail dimensions",
+    "content_type": 19,
+    "codename": "view_thumbnaildimensions"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$NW3fUKYALEQ5mvmXHvDifK$cdXcz0lMm6JSU4JUCeyGDbhzZwAjNdei+/KGBFDovVI=",
+    "last_login": "2025-01-22T23:30:41.320Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "Григорий",
+    "last_name": "Казначеев",
+    "phone_number": "89197380829",
+    "email": "kaznacheev6969@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-11-14T00:38:30.347Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$qeriZKXS9ULI6sVRF3EE0j$fTUBQtWOJXEOLNzurq5rDbiNq6LpKTn8vyhkEUgULNY=",
+    "last_login": "2024-11-25T01:59:25.181Z",
+    "is_superuser": false,
+    "username": "extreme0870",
+    "first_name": "Александр",
+    "last_name": "Казначеев",
+    "phone_number": "+79197380829",
+    "email": "kaznacheev13012230@mail.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-11-25T00:50:39.089Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$QjuaAbCzMZRPlDQWb24bC6$+bSFS7pKlzDPAT3QPMg3ZgpquCD2MJ5jvprHfmHzvwQ=",
+    "last_login": "2024-12-01T19:47:45.500Z",
+    "is_superuser": false,
+    "username": "yanas",
+    "first_name": "Яна",
+    "last_name": "Махаринская",
+    "phone_number": "89054362585",
+    "email": "kaznacheev22@mail.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-01T19:46:51.113Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$oM87nTj78L1GqtyJkmExoq$EIdmuKmKDXE8MouJbVt1MA8DgHFAmOxYjDoZRGchwsQ=",
+    "last_login": "2024-12-19T11:35:37.322Z",
+    "is_superuser": false,
+    "username": "yanasddsas",
+    "first_name": "Сопля",
+    "last_name": "Спидозная",
+    "phone_number": "89197380820",
+    "email": "kaznacheev22@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-12-19T11:35:27.514Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "account",
+    "model": "profile"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "sjop",
+    "model": "category"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "sjop",
+    "model": "product"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "sjop",
+    "model": "imagebyproduct"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "sjop",
+    "model": "rating"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "sjop",
+    "model": "marketshop"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "sjop",
+    "model": "categorymarketshop"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "orders",
+    "model": "order"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 15,
+  "fields": {
+    "app_label": "orders",
+    "model": "orderitem"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 16,
+  "fields": {
+    "app_label": "coupens",
+    "model": "coupone"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 17,
+  "fields": {
+    "app_label": "easy_thumbnails",
+    "model": "source"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 18,
+  "fields": {
+    "app_label": "easy_thumbnails",
+    "model": "thumbnail"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 19,
+  "fields": {
+    "app_label": "easy_thumbnails",
+    "model": "thumbnaildimensions"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "3c73e0okuutuij4wfn7np3dzy2eyi2j1",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSFAecWle7-BDMyMVA0kpV0Z_12bdKHbe865L5FgW2vaBi1pRnEWkzj9bhnKg9oO8A7t1mXpbV3mLHdFHnTIa0d6Xg7376DCqN-aA2lnVcjKGwpgSBdCjS5ysRYj-sI8GVYAmpTiGNmTL-gUG0AbrXh_AP29OL4:1tHpuz:DdQ6kFK-Q2OZum8czbEkk_cXyGdPtq220fKH3VgR01o",
+    "expire_date": "2024-12-15T19:47:45.614Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "aozzdb0k2p0lgvjxfmewrpeb10hktun3",
+  "fields": {
+    "session_data": ".eJxVjsEOgjAQRP-lZ9OwLbDUo3e-gWy7W4samlA4Gf9dSHrQ67yZl3mrifYtTXuRdZpZXRWoy2_mKTxlOQE_aLlnHfKyrbPXZ0VXWvSYWV632v0TJCrpWHsDoXFoyKIBbzp00YaIvkF2QxxEDHErPgD3rSUbQboegQwOEiBye0jzyvUkfr7XjTxZ:1takI8:5S_GCsAvvnpDGO07hJqT2f96k-lIvDynT5emUlRDAAY",
+    "expire_date": "2025-02-05T23:37:48.817Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ce8vkhc4scrbu4amcga91pcac6dlgl56",
+  "fields": {
+    "session_data": ".eJxVjEsOwjAMBe-SNYrqJK1Tluw5Q2XHDimgRupnhbg7VOoCtm9m3ssMtK1l2Badh1HM2YA5_W5M6aHTDuRO063aVKd1Htnuij3oYq9V9Hk53L-DQkv51uwgNT068uiAXYt99ikjNyh9zFHVkQTlBNIFTz6Dth0COYyaIEsw7w_hYTgw:1tFOVa:W6qYNPUXA_b5GxEN4FZSZOFfMkf1sfxMd3sTkUh1Wqs",
+    "expire_date": "2024-12-09T02:07:26.144Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "itbwko6c4n7kd7vyhn64yv0gandpba5j",
+  "fields": {
+    "session_data": ".eJxVjEsOwjAMBe-SNYrqJK1Tluw5Q2XHDimgRupnhbg7VOoCtm9m3ssMtK1l2Badh1HM2YA5_W5M6aHTDuRO063aVKd1Htnuij3oYq9V9Hk53L-DQkv51uwgNT068uiAXYt99ikjNyh9zFHVkQTlBNIFTz6Dth0COYyaIEsw7w_hYTgw:1tBNsj:-flxISLYB-qy9vJlp31bt16KoWpJy9Ft6Tker8eaWF4",
+    "expire_date": "2024-11-28T00:38:45.060Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "rqt2z7xov6hq3dizkremj563rf1fy7yi",
+  "fields": {
+    "session_data": ".eJxVjEsOwjAMBe-SNYrqJK1Tluw5Q2XHDimgRupnhbg7VOoCtm9m3ssMtK1l2Badh1HM2YA5_W5M6aHTDuRO063aVKd1Htnuij3oYq9V9Hk53L-DQkv51uwgNT068uiAXYt99ikjNyh9zFHVkQTlBNIFTz6Dth0COYyaIEsw7w_hYTgw:1tOR1T:o_MpHpypdiFkqbe7actPJs7hRyvcmHcSKCO7kCJd1xw",
+    "expire_date": "2025-01-03T00:37:43.606Z"
+  }
+},
+{
+  "model": "sjop.category",
+  "pk": 1,
+  "fields": {
+    "name": "Avto",
+    "slug": "avto",
+    "type": "0"
+  }
+},
+{
+  "model": "sjop.category",
+  "pk": 2,
+  "fields": {
+    "name": "Moto",
+    "slug": "moto",
+    "type": "0"
+  }
+},
+{
+  "model": "sjop.category",
+  "pk": 3,
+  "fields": {
+    "name": "JDM Auto",
+    "slug": "jdm-auto",
+    "type": "PRODUCT"
+  }
+},
+{
+  "model": "sjop.category",
+  "pk": 4,
+  "fields": {
+    "name": "Бытовая техника",
+    "slug": "bytovaya-tehnika",
+    "type": "SHOP"
+  }
+},
+{
+  "model": "sjop.marketshop",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "name": "NitkaIgolka",
+    "slug": "nitkaigolka",
+    "created": "2024-11-14T00:41:31.772Z",
+    "description": "",
+    "image": ""
+  }
+},
+{
+  "model": "sjop.marketshop",
+  "pk": 2,
+  "fields": {
+    "user": 3,
+    "name": "кар кар кар",
+    "slug": "kar-kar-kar",
+    "created": "2024-12-01T20:11:32.708Z",
+    "description": "",
+    "image": ""
+  }
+},
+{
+  "model": "sjop.marketshop",
+  "pk": 3,
+  "fields": {
+    "user": 4,
+    "name": "suzuki-gsxr",
+    "slug": "suzuki-gsxr",
+    "created": "2024-12-19T11:36:06.355Z",
+    "description": "",
+    "image": ""
+  }
+},
+{
+  "model": "sjop.product",
+  "pk": 27,
+  "fields": {
+    "store": 1,
+    "category": 3,
+    "name": "Nissan GTR-34",
+    "slug": "nissan-gtr-34",
+    "description": "",
+    "price": "12314.00",
+    "available": true,
+    "created": "2024-11-29T22:39:31.749Z",
+    "updated": "2024-11-29T23:47:21.438Z",
+    "order_field": 0
+  }
+},
+{
+  "model": "sjop.product",
+  "pk": 28,
+  "fields": {
+    "store": 1,
+    "category": 2,
+    "name": "132123",
+    "slug": "132123",
+    "description": "123",
+    "price": "1243.00",
+    "available": true,
+    "created": "2024-11-29T23:47:54.343Z",
+    "updated": "2024-11-29T23:48:50.526Z",
+    "order_field": 0
+  }
+},
+{
+  "model": "sjop.product",
+  "pk": 29,
+  "fields": {
+    "store": 1,
+    "category": 3,
+    "name": "sdf",
+    "slug": "sdf",
+    "description": "asdasd",
+    "price": "123354.00",
+    "available": true,
+    "created": "2024-11-29T23:49:10.729Z",
+    "updated": "2024-11-29T23:49:10.729Z",
+    "order_field": 1
+  }
+},
+{
+  "model": "sjop.product",
+  "pk": 30,
+  "fields": {
+    "store": 1,
+    "category": 3,
+    "name": "McLaren R1",
+    "slug": "mclaren-r1",
+    "description": "qwewqe",
+    "price": "123213.00",
+    "available": true,
+    "created": "2024-11-30T05:43:04.760Z",
+    "updated": "2024-11-30T05:43:04.760Z",
+    "order_field": 2
+  }
+},
+{
+  "model": "sjop.product",
+  "pk": 31,
+  "fields": {
+    "store": 2,
+    "category": 3,
+    "name": "Nissan GTR-34",
+    "slug": "nissan-gtr-34",
+    "description": "",
+    "price": "8000000.00",
+    "available": true,
+    "created": "2024-12-01T20:12:15.263Z",
+    "updated": "2024-12-01T20:12:15.263Z",
+    "order_field": 3
+  }
+},
+{
+  "model": "sjop.product",
+  "pk": 32,
+  "fields": {
+    "store": 3,
+    "category": 4,
+    "name": "Samsung",
+    "slug": "samsung",
+    "description": "спидозные сопли,сопливый спид",
+    "price": "14212.00",
+    "available": true,
+    "created": "2024-12-19T11:37:00.238Z",
+    "updated": "2024-12-19T11:37:00.238Z",
+    "order_field": 0
+  }
+},
+{
+  "model": "sjop.imagebyproduct",
+  "pk": 10,
+  "fields": {
+    "product": 27,
+    "image": "product/2024/11/30/mv_agusta_f4_mvaugusta_f4cc_sport_bike_98036_1600x900.jpg"
+  }
+},
+{
+  "model": "sjop.imagebyproduct",
+  "pk": 11,
+  "fields": {
+    "product": 28,
+    "image": "product/2024/11/30/mclaren_p1_mclaren_avtomobil_316980_3840x2400_bmyDqDD.jpg"
+  }
+},
+{
+  "model": "sjop.imagebyproduct",
+  "pk": 12,
+  "fields": {
+    "product": 29,
+    "image": "product/2024/11/30/kawasaki_mototsikl_bajk_188538_2560x1080.jpg"
+  }
+},
+{
+  "model": "sjop.imagebyproduct",
+  "pk": 13,
+  "fields": {
+    "product": 30,
+    "image": "product/2024/11/30/mclaren_p1_krasnyj_109728_1920x1080.jpg"
+  }
+},
+{
+  "model": "sjop.imagebyproduct",
+  "pk": 14,
+  "fields": {
+    "product": 29,
+    "image": "product/2024/11/30/bmw_vision_efficientdynamics_100297_1600x900_hiTokAm.jpg"
+  }
+},
+{
+  "model": "sjop.imagebyproduct",
+  "pk": 15,
+  "fields": {
+    "product": 28,
+    "image": "product/2024/11/30/mclaren_p1_krasnyj_109728_1920x1080_pI5IkDq.jpg"
+  }
+},
+{
+  "model": "sjop.imagebyproduct",
+  "pk": 16,
+  "fields": {
+    "product": 30,
+    "image": "product/2024/11/30/nissan_gtr_nissan_sportkar_139668_3840x2160.jpg"
+  }
+},
+{
+  "model": "sjop.imagebyproduct",
+  "pk": 17,
+  "fields": {
+    "product": 31,
+    "image": "product/2024/12/01/nlsdklf.jpg"
+  }
+},
+{
+  "model": "sjop.imagebyproduct",
+  "pk": 18,
+  "fields": {
+    "product": 27,
+    "image": "product/2024/12/19/sad.jpg"
+  }
+},
+{
+  "model": "sjop.imagebyproduct",
+  "pk": 19,
+  "fields": {
+    "product": 27,
+    "image": "product/2024/12/19/mclaren_p1_krasnyj_109728_1920x1080.jpg"
+  }
+},
+{
+  "model": "sjop.imagebyproduct",
+  "pk": 20,
+  "fields": {
+    "product": 32,
+    "image": "product/2024/12/19/20884901_WAN24200ME_PGA4_def.jpg"
+  }
+},
+{
+  "model": "sjop.rating",
+  "pk": 2,
+  "fields": {
+    "product": 30,
+    "user": 1,
+    "stars": 3,
+    "text": "123213 123 1213",
+    "created": "2024-11-30T05:44:57.716Z",
+    "active": true
+  }
+},
+{
+  "model": "sjop.rating",
+  "pk": 3,
+  "fields": {
+    "product": 27,
+    "user": 1,
+    "stars": 3,
+    "text": "dsa';dloa'sd",
+    "created": "2024-12-19T11:29:44.543Z",
+    "active": true
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 6,
+  "fields": {
+    "coupon": null,
+    "discount": 0,
+    "user": 1,
+    "city": "Ставрополь",
+    "postal_code": "357812",
+    "address": "Журавлёва 2",
+    "created": "2025-01-22T23:33:56.954Z",
+    "updated": "2025-01-22T23:33:56.954Z",
+    "paid": false,
+    "payment_link": null,
+    "stripe_id": ""
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 7,
+  "fields": {
+    "coupon": null,
+    "discount": 0,
+    "user": 1,
+    "city": "Ставрополь",
+    "postal_code": "357812",
+    "address": "Журавлёва 2",
+    "created": "2025-01-22T23:37:48.601Z",
+    "updated": "2025-01-22T23:37:48.602Z",
+    "paid": true,
+    "payment_link": null,
+    "stripe_id": "pi_3QkDUk065gR4p38H13REVF4I"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 5,
+  "fields": {
+    "order": 6,
+    "product": 30,
+    "price": "123213.00",
+    "quantity": 12
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 6,
+  "fields": {
+    "order": 6,
+    "product": 29,
+    "price": "123354.00",
+    "quantity": 1
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 7,
+  "fields": {
+    "order": 7,
+    "product": 28,
+    "price": "1243.00",
+    "quantity": 1
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 1,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/11/14/bmw_vision_efficientdynamics_100297_1600x900_wX3rzGr.jpg",
+    "modified": "2024-11-14T00:42:16.523Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 2,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/11/14/mclaren_p1_mclaren_avtomobil_316980_3840x2400_VsA4JRM.jpg",
+    "modified": "2024-11-14T00:42:16.857Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 3,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/11/14/hornet_and_cb100r_mototsikly_doroga_74164_2560x1080_WaDK8vq.jpg",
+    "modified": "2024-11-14T00:51:33.462Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 4,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/11/14/kawasaki_mototsikl_bajk_188538_2560x1080.jpg",
+    "modified": "2024-11-14T00:51:33.629Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 5,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/11/30/mclaren_p1_mclaren_avtomobil_316980_3840x2400.jpg",
+    "modified": "2024-11-29T21:35:28.612Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 6,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/11/30/mclaren_p1_mclaren_avtomobil_316980_3840x2400_KQNYWFi.jpg",
+    "modified": "2024-11-29T21:36:08.464Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 7,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/11/30/bmw_vision_efficientdynamics_100297_1600x900.jpg",
+    "modified": "2024-11-29T21:39:23.949Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 8,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/11/30/bmw_vision_efficientdynamics_100297_1600x900_hB7Ezy4.jpg",
+    "modified": "2024-11-29T21:41:29.533Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 9,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/11/30/mashina_seryj_mokryj_147750_3840x2160.jpg",
+    "modified": "2024-11-29T22:17:34.569Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 10,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/11/30/mv_agusta_f4_mvaugusta_f4cc_sport_bike_98036_1600x900.jpg",
+    "modified": "2024-11-29T23:47:21.584Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 11,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/11/30/nlsdklf.jpg",
+    "modified": "2024-11-29T23:48:50.724Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 12,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/11/30/sad.jpg",
+    "modified": "2024-11-30T05:10:42.675Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 13,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/11/30/mclaren_p1_krasnyj_109728_1920x1080.jpg",
+    "modified": "2024-11-30T05:44:32.715Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 14,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/11/30/kawasaki_mototsikl_bajk_188538_2560x1080.jpg",
+    "modified": "2024-11-30T05:48:10.751Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 15,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/11/30/bmw_vision_efficientdynamics_100297_1600x900_hiTokAm.jpg",
+    "modified": "2024-11-30T05:48:11.147Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 16,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/11/30/mclaren_p1_mclaren_avtomobil_316980_3840x2400_bmyDqDD.jpg",
+    "modified": "2024-11-30T05:48:38.901Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 17,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/11/30/mclaren_p1_krasnyj_109728_1920x1080_pI5IkDq.jpg",
+    "modified": "2024-11-30T05:48:39.306Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 18,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/11/30/nissan_gtr_nissan_sportkar_139668_3840x2160.jpg",
+    "modified": "2024-11-30T06:27:47.324Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 19,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/12/01/nlsdklf.jpg",
+    "modified": "2024-12-01T20:12:29.547Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 20,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/12/19/sad.jpg",
+    "modified": "2024-12-19T11:30:06.018Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 21,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/12/19/mclaren_p1_krasnyj_109728_1920x1080.jpg",
+    "modified": "2024-12-19T11:30:25.759Z"
+  }
+},
+{
+  "model": "easy_thumbnails.source",
+  "pk": 22,
+  "fields": {
+    "storage_hash": "0d677af76ca5bf5575d614e04932c3a4",
+    "name": "product/2024/12/19/20884901_WAN24200ME_PGA4_def.jpg",
+    "modified": "2024-12-19T11:37:18.247Z"
+  }
+}
+]

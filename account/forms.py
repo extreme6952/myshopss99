@@ -52,7 +52,7 @@ class UserEditForm(forms.ModelForm):
 
         model = User
 
-        fields = ['username','first_name','last_name','email']
+        fields = ['username','first_name','last_name','email','phone_number']
 
 
     def clean_email(self):
@@ -73,7 +73,7 @@ class UserEditForm(forms.ModelForm):
         self.fields['first_name'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Введите ваше имя'})
         self.fields['last_name'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Введите вашу фамилию'})
         self.fields['email'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Введите вашу электронную почту'})
-
+        self.fields['phone_number'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Введите свой номер телефона'})
 
 class ProfileEdit(forms.ModelForm):
 

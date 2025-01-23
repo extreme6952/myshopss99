@@ -17,7 +17,6 @@ from .forms import *
 
 
 
-
 class ProductStoreUserMixin(ListView):
     model = Product
     fields = ['name','description','price','available']

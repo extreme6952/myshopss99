@@ -1,20 +1,18 @@
 from django.db import models
-
 from django.urls import reverse
-
 from easy_thumbnails.fields import ThumbnailerImageField
-
 from django.contrib.auth.models import User
-
 from django.core.validators import MinValueValidator,MaxValueValidator
-
 from django.utils import timezone
-
 from django.utils.text import slugify
-
 from .fields import OrderField
-
 from unidecode import unidecode
+
+
+
+
+
+
 
 CATEGORY_TYPES = (
     ('PRODUCT', 'Продукт'),

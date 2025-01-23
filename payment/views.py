@@ -45,7 +45,8 @@ def payment_process(request):
             'success_url':success_url,
             'cancel_url':canceled_url,
             'client_reference_id':order_id,
-            'line_items':[]
+            'line_items':[],
+            'payment_method_types': ['card']
         }
 
 
